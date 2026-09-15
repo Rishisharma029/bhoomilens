@@ -1,0 +1,3177 @@
+[
+  {
+    "id": "doc_sub_1789464084883",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "parcel_id": "LR-1247",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "SALE_DEED",
+    "file_name": "Registry.pdf",
+    "file_size": "0.0 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "C:\\Users\\Rishi Sharma\\OneDrive\\Desktop\\PRODUCTION\\DEV BHOOMI\\server\\uploads\\deed-1789464083689-a9b2416f.pdf",
+    "storage_url": "/uploads/deed-1789464083689-a9b2416f.pdf",
+    "file_hash": "0xa9b2416f53afa610b842b41ada25e40969a4e16ef551000696d41cde297a1a83",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2026-09-15T09:21:24.884Z",
+    "extracted_data": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": "Sub-Registrar Office, Central Tehsil, XYZ",
+      "overallConfidence": 97,
+      "fields": {
+        "ownerName": {
+          "label": "Owner Name",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 34,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "fatherName": {
+          "label": "Father / Guardian Name",
+          "key": "fatherName",
+          "value": "Late Bipin Chandra Sharma",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 40,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey / Khasra Number",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 46,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "khataNo": {
+          "label": "Khata / Account Number",
+          "key": "khataNo",
+          "value": "0042",
+          "confidence": 0.95,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 52,
+            "width": 16,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35",
+          "confidence": 0.96,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 58,
+            "width": 16,
+            "height": 4.5
+          }
+        },
+        "unit": {
+          "label": "Unit",
+          "key": "unit",
+          "value": "Acres",
+          "confidence": 0.98,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 56,
+            "y": 58,
+            "width": 12,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.97,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 64,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "tehsil": {
+          "label": "Tehsil",
+          "key": "tehsil",
+          "value": "Central Tehsil",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 70,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 76,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "state": {
+          "label": "State",
+          "key": "state",
+          "value": "Uttarakhand",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 82,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationNumber": {
+          "label": "Registration Number",
+          "key": "registrationNumber",
+          "value": "UK-XYZ-2019-REG-04821",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 18,
+            "width": 32,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 24,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "documentType": {
+          "label": "Document Type",
+          "key": "documentType",
+          "value": "Registered Absolute Conveyance Deed",
+          "confidence": 0.97,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 12,
+            "width": 34,
+            "height": 4.5
+          }
+        },
+        "previousOwner": {
+          "label": "Previous Owner",
+          "key": "previousOwner",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 88,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "transactionType": {
+          "label": "Transaction Type",
+          "key": "transactionType",
+          "value": "Absolute Sale & Conveyance with Possession",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 94,
+            "width": 30,
+            "height": 4.5
+          }
+        },
+        "boundaries": {
+          "label": "Boundaries",
+          "key": "boundaries",
+          "value": "North: Plot No. 124/6 (Dharampal Agricultural Land) | South: State Irrigation Canal (राजवाहा) | East: Link Road 12m wide | West: Khasra 124/8 (Private Orchard)",
+          "confidence": 0.93,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 20,
+            "y": 85,
+            "width": 60,
+            "height": 8
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), CENTRAL TEHSIL, DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\nDocument Type: Registered Absolute Conveyance Deed\nTransaction Type: Absolute Sale & Conveyance with Possession\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's / Guardian Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nPrevious Owner / Vendor: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\nState: Uttarakhand\nDistrict: XYZ\nTehsil: Central Tehsil\n\n--- PAGE 2 ---\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata / Account Number: 0042\nTotal Area: 2.35\nUnit: Acres\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nState: Uttarakhand\nLand Classification: Agricultural (कृषि भूमि)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified and registered by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 2:51 pm"
+    },
+    "ai_validation_report": {
+      "id": "ai_rep_1789464084884",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789464084883",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 86,
+      "recommendation": "MANUAL_REVIEW",
+      "analyzedAt": "15 Sept 2026, 2:51 pm",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "category": "COMPLETENESS",
+          "title": "Required field present",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "category": "METRIC",
+          "title": "Area is numerically valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Area \"2.35\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "category": "TEMPORAL",
+          "title": "Date is valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "category": "CADASTRE",
+          "title": "Survey number format valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "category": "REGISTRY",
+          "title": "Duplicate survey/parcel detection",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "category": "IDENTITY",
+          "title": "Owner-name similarity",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "category": "METRIC",
+          "title": "Area difference against previous record",
+          "status": "WARNING",
+          "confidence": 0.52,
+          "description": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "category": "CADASTRE",
+          "title": "Referenced parcel exists",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Referenced cadastral parcel LR-1247 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "fileName": "Registry.pdf",
+    "fileSize": "0.0 MB",
+    "fileUrl": "/uploads/deed-1789464083689-a9b2416f.pdf",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-1247",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": "Sub-Registrar Office, Central Tehsil, XYZ",
+      "overallConfidence": 97,
+      "fields": {
+        "ownerName": {
+          "label": "Owner Name",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 34,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "fatherName": {
+          "label": "Father / Guardian Name",
+          "key": "fatherName",
+          "value": "Late Bipin Chandra Sharma",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 40,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey / Khasra Number",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 46,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "khataNo": {
+          "label": "Khata / Account Number",
+          "key": "khataNo",
+          "value": "0042",
+          "confidence": 0.95,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 52,
+            "width": 16,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35",
+          "confidence": 1,
+          "source": "citizen verified",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 58,
+            "width": 16,
+            "height": 4.5
+          },
+          "isEdited": true
+        },
+        "unit": {
+          "label": "Unit",
+          "key": "unit",
+          "value": "Acres",
+          "confidence": 0.98,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 56,
+            "y": 58,
+            "width": 12,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.97,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 64,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "tehsil": {
+          "label": "Tehsil",
+          "key": "tehsil",
+          "value": "Central Tehsil",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 70,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 76,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "state": {
+          "label": "State",
+          "key": "state",
+          "value": "Uttarakhand",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 82,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationNumber": {
+          "label": "Registration Number",
+          "key": "registrationNumber",
+          "value": "UK-XYZ-2019-REG-04821",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 18,
+            "width": 32,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 24,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "documentType": {
+          "label": "Document Type",
+          "key": "documentType",
+          "value": "Registered Absolute Conveyance Deed",
+          "confidence": 0.97,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 12,
+            "width": 34,
+            "height": 4.5
+          }
+        },
+        "previousOwner": {
+          "label": "Previous Owner",
+          "key": "previousOwner",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 88,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "transactionType": {
+          "label": "Transaction Type",
+          "key": "transactionType",
+          "value": "Absolute Sale & Conveyance with Possession",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 94,
+            "width": 30,
+            "height": 4.5
+          }
+        },
+        "boundaries": {
+          "label": "Boundaries",
+          "key": "boundaries",
+          "value": "North: Plot No. 124/6 (Dharampal Agricultural Land) | South: State Irrigation Canal (राजवाहा) | East: Link Road 12m wide | West: Khasra 124/8 (Private Orchard)",
+          "confidence": 0.93,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 20,
+            "y": 85,
+            "width": 60,
+            "height": 8
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), CENTRAL TEHSIL, DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\nDocument Type: Registered Absolute Conveyance Deed\nTransaction Type: Absolute Sale & Conveyance with Possession\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's / Guardian Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nPrevious Owner / Vendor: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\nState: Uttarakhand\nDistrict: XYZ\nTehsil: Central Tehsil\n\n--- PAGE 2 ---\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata / Account Number: 0042\nTotal Area: 2.35\nUnit: Acres\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nState: Uttarakhand\nLand Classification: Agricultural (कृषि भूमि)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified and registered by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 2:51 pm"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789464084884",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789464084883",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 86,
+      "recommendation": "MANUAL_REVIEW",
+      "analyzedAt": "15 Sept 2026, 2:51 pm",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "category": "COMPLETENESS",
+          "title": "Required field present",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "category": "METRIC",
+          "title": "Area is numerically valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Area \"2.35\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "category": "TEMPORAL",
+          "title": "Date is valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "category": "CADASTRE",
+          "title": "Survey number format valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "category": "REGISTRY",
+          "title": "Duplicate survey/parcel detection",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "category": "IDENTITY",
+          "title": "Owner-name similarity",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "category": "METRIC",
+          "title": "Area difference against previous record",
+          "status": "WARNING",
+          "confidence": 0.52,
+          "description": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "category": "CADASTRE",
+          "title": "Referenced parcel exists",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Referenced cadastral parcel LR-1247 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "correctionRemarks": "Verified against local revenue records"
+  },
+  {
+    "id": "doc_sub_1789463910554",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "parcel_id": "LR-1247",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "SALE_DEED",
+    "file_name": "Registry.pdf",
+    "file_size": "0.0 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "C:\\Users\\Rishi Sharma\\OneDrive\\Desktop\\PRODUCTION\\DEV BHOOMI\\server\\uploads\\deed-1789463904898-a9b2416f.pdf",
+    "storage_url": "/uploads/deed-1789463904898-a9b2416f.pdf",
+    "file_hash": "0xa9b2416f53afa610b842b41ada25e40969a4e16ef551000696d41cde297a1a83",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2026-09-15T09:18:30.555Z",
+    "extracted_data": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": "Sub-Registrar Office, Central Tehsil, XYZ",
+      "overallConfidence": 97,
+      "fields": {
+        "ownerName": {
+          "label": "Owner Name",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 34,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "fatherName": {
+          "label": "Father / Guardian Name",
+          "key": "fatherName",
+          "value": "Late Bipin Chandra Sharma",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 40,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey / Khasra Number",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 46,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "khataNo": {
+          "label": "Khata / Account Number",
+          "key": "khataNo",
+          "value": "0042",
+          "confidence": 0.95,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 52,
+            "width": 16,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35",
+          "confidence": 0.96,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 58,
+            "width": 16,
+            "height": 4.5
+          }
+        },
+        "unit": {
+          "label": "Unit",
+          "key": "unit",
+          "value": "Acres",
+          "confidence": 0.98,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 56,
+            "y": 58,
+            "width": 12,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.97,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 64,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "tehsil": {
+          "label": "Tehsil",
+          "key": "tehsil",
+          "value": "Central Tehsil",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 70,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 76,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "state": {
+          "label": "State",
+          "key": "state",
+          "value": "Stamp Duty GRAS Challan",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 82,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationNumber": {
+          "label": "Registration Number",
+          "key": "registrationNumber",
+          "value": "UK-XYZ-2019-REG-04821",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 18,
+            "width": 32,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 24,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "documentType": {
+          "label": "Document Type",
+          "key": "documentType",
+          "value": "Registered Absolute Conveyance Deed",
+          "confidence": 0.97,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 12,
+            "width": 34,
+            "height": 4.5
+          }
+        },
+        "previousOwner": {
+          "label": "Previous Owner",
+          "key": "previousOwner",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 88,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "transactionType": {
+          "label": "Transaction Type",
+          "key": "transactionType",
+          "value": "Absolute Sale & Conveyance with Possession",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 94,
+            "width": 30,
+            "height": 4.5
+          }
+        },
+        "boundaries": {
+          "label": "Boundaries",
+          "key": "boundaries",
+          "value": "North: Plot No. 124/6 (Dharampal Agricultural Land) | South: State Irrigation Canal (राजवाहा) | East: Link Road 12m wide | West: Khasra 124/8 (Private Orchard)",
+          "confidence": 0.93,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 20,
+            "y": 85,
+            "width": 60,
+            "height": 8
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), CENTRAL TEHSIL, DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\nDocument Type: Registered Absolute Conveyance Deed\nTransaction Type: Absolute Sale & Conveyance with Possession\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's / Guardian Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nPrevious Owner / Vendor: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\nState: Uttarakhand\nDistrict: XYZ\nTehsil: Central Tehsil\n\n--- PAGE 2 ---\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata / Account Number: 0042\nTotal Area: 2.35\nUnit: Acres\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nState: Uttarakhand\nLand Classification: Agricultural (कृषि भूमि)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified and registered by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 2:48 pm"
+    },
+    "ai_validation_report": {
+      "id": "ai_rep_1789463910554",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789463910554",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 86,
+      "recommendation": "MANUAL_REVIEW",
+      "analyzedAt": "15 Sept 2026, 2:48 pm",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "category": "COMPLETENESS",
+          "title": "Required field present",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "category": "METRIC",
+          "title": "Area is numerically valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Area \"2.35\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "category": "TEMPORAL",
+          "title": "Date is valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "category": "CADASTRE",
+          "title": "Survey number format valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "category": "REGISTRY",
+          "title": "Duplicate survey/parcel detection",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "category": "IDENTITY",
+          "title": "Owner-name similarity",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "category": "METRIC",
+          "title": "Area difference against previous record",
+          "status": "WARNING",
+          "confidence": 0.52,
+          "description": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "category": "CADASTRE",
+          "title": "Referenced parcel exists",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Referenced cadastral parcel LR-10294 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "fileName": "Registry.pdf",
+    "fileSize": "0.0 MB",
+    "fileUrl": "/uploads/deed-1789463904898-a9b2416f.pdf",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-1247",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": "Sub-Registrar Office, Central Tehsil, XYZ",
+      "overallConfidence": 97,
+      "fields": {
+        "ownerName": {
+          "label": "Owner Name",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 34,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "fatherName": {
+          "label": "Father / Guardian Name",
+          "key": "fatherName",
+          "value": "Late Bipin Chandra Sharma",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 40,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey / Khasra Number",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 46,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "khataNo": {
+          "label": "Khata / Account Number",
+          "key": "khataNo",
+          "value": "0042",
+          "confidence": 0.95,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 52,
+            "width": 16,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35",
+          "confidence": 1,
+          "source": "citizen verified",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 58,
+            "width": 16,
+            "height": 4.5
+          },
+          "isEdited": true
+        },
+        "unit": {
+          "label": "Unit",
+          "key": "unit",
+          "value": "Acres",
+          "confidence": 0.98,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 56,
+            "y": 58,
+            "width": 12,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.97,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 64,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "tehsil": {
+          "label": "Tehsil",
+          "key": "tehsil",
+          "value": "Central Tehsil",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 70,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 76,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "state": {
+          "label": "State",
+          "key": "state",
+          "value": "Stamp Duty GRAS Challan",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 82,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationNumber": {
+          "label": "Registration Number",
+          "key": "registrationNumber",
+          "value": "UK-XYZ-2019-REG-04821",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 18,
+            "width": 32,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 24,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "documentType": {
+          "label": "Document Type",
+          "key": "documentType",
+          "value": "Registered Absolute Conveyance Deed",
+          "confidence": 0.97,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 12,
+            "width": 34,
+            "height": 4.5
+          }
+        },
+        "previousOwner": {
+          "label": "Previous Owner",
+          "key": "previousOwner",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 88,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "transactionType": {
+          "label": "Transaction Type",
+          "key": "transactionType",
+          "value": "Absolute Sale & Conveyance with Possession",
+          "confidence": 0.96,
+          "source": "page 1",
+          "sourceBoundingBox": {
+            "x": 38,
+            "y": 94,
+            "width": 30,
+            "height": 4.5
+          }
+        },
+        "boundaries": {
+          "label": "Boundaries",
+          "key": "boundaries",
+          "value": "North: Plot No. 124/6 (Dharampal Agricultural Land) | South: State Irrigation Canal (राजवाहा) | East: Link Road 12m wide | West: Khasra 124/8 (Private Orchard)",
+          "confidence": 0.93,
+          "source": "page 2",
+          "sourceBoundingBox": {
+            "x": 20,
+            "y": 85,
+            "width": 60,
+            "height": 8
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), CENTRAL TEHSIL, DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\nDocument Type: Registered Absolute Conveyance Deed\nTransaction Type: Absolute Sale & Conveyance with Possession\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's / Guardian Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nPrevious Owner / Vendor: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\nState: Uttarakhand\nDistrict: XYZ\nTehsil: Central Tehsil\n\n--- PAGE 2 ---\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata / Account Number: 0042\nTotal Area: 2.35\nUnit: Acres\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nState: Uttarakhand\nLand Classification: Agricultural (कृषि भूमि)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified and registered by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 2:48 pm"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789463910554",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789463910554",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 86,
+      "recommendation": "MANUAL_REVIEW",
+      "analyzedAt": "15 Sept 2026, 2:48 pm",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "category": "COMPLETENESS",
+          "title": "Required field present",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "category": "METRIC",
+          "title": "Area is numerically valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Area \"2.35\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "category": "TEMPORAL",
+          "title": "Date is valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "category": "CADASTRE",
+          "title": "Survey number format valid",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "category": "REGISTRY",
+          "title": "Duplicate survey/parcel detection",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "category": "IDENTITY",
+          "title": "Owner-name similarity",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "category": "METRIC",
+          "title": "Area difference against previous record",
+          "status": "WARNING",
+          "confidence": 0.52,
+          "description": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "category": "CADASTRE",
+          "title": "Referenced parcel exists",
+          "status": "PASS",
+          "confidence": 1,
+          "description": "Referenced cadastral parcel LR-10294 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "correctionRemarks": "Verified against local revenue records"
+  },
+  {
+    "id": "doc_sub_1789415635859",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "parcel_id": "LR-1247",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "SALE_DEED",
+    "file_name": "Registry.pdf",
+    "file_size": "0.0 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "C:\\Users\\Rishi Sharma\\OneDrive\\Desktop\\PRODUCTION\\DEV BHOOMI\\server\\uploads\\deed-1789415634396-a9b2416f.pdf",
+    "storage_url": "/uploads/deed-1789415634396-a9b2416f.pdf",
+    "file_hash": "0xa9b2416f53afa610b842b41ada25e40969a4e16ef551000696d41cde297a1a83",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2026-09-14T19:53:55.861Z",
+    "extracted_data": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 1:23 am"
+    },
+    "ai_validation_report": {
+      "id": "ai_rep_1789415635860",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789415635859",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 86,
+      "recommendation": "MANUAL_REVIEW",
+      "analyzedAt": "15 Sept 2026, 1:23 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "category": "COMPLETENESS",
+          "title": "Required field present",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "category": "METRIC",
+          "title": "Area is numerically valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Area \"2.35 Acres\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "category": "TEMPORAL",
+          "title": "Date is valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "category": "CADASTRE",
+          "title": "Survey number format valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "category": "REGISTRY",
+          "title": "Duplicate survey/parcel detection",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "category": "IDENTITY",
+          "title": "Owner-name similarity",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "category": "METRIC",
+          "title": "Area difference against previous record",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "category": "CADASTRE",
+          "title": "Referenced parcel exists",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Referenced cadastral parcel LR-1247 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "fileName": "Registry.pdf",
+    "fileSize": "0.0 MB",
+    "fileUrl": "/uploads/deed-1789415634396-a9b2416f.pdf",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-1247",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 1:23 am"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789415635860",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789415635859",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 86,
+      "recommendation": "MANUAL_REVIEW",
+      "analyzedAt": "15 Sept 2026, 1:23 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "category": "COMPLETENESS",
+          "title": "Required field present",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "category": "METRIC",
+          "title": "Area is numerically valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Area \"2.35 Acres\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "category": "TEMPORAL",
+          "title": "Date is valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "category": "CADASTRE",
+          "title": "Survey number format valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "category": "REGISTRY",
+          "title": "Duplicate survey/parcel detection",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "category": "IDENTITY",
+          "title": "Owner-name similarity",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "category": "METRIC",
+          "title": "Area difference against previous record",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "category": "CADASTRE",
+          "title": "Referenced parcel exists",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Referenced cadastral parcel LR-1247 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    }
+  },
+  {
+    "id": "doc_sub_1789414339172",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "parcel_id": "LR-1247",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "SALE_DEED",
+    "file_name": "Registry.pdf",
+    "file_size": "0.0 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "C:\\Users\\Rishi Sharma\\OneDrive\\Desktop\\PRODUCTION\\DEV BHOOMI\\server\\uploads\\deed-1789414338106-a9b2416f.pdf",
+    "storage_url": "/uploads/deed-1789414338106-a9b2416f.pdf",
+    "file_hash": "0xa9b2416f53afa610b842b41ada25e40969a4e16ef551000696d41cde297a1a83",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2026-09-14T19:32:19.173Z",
+    "extracted_data": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 1:02 am"
+    },
+    "ai_validation_report": {
+      "id": "ai_rep_1789414339172",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789414339172",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 82,
+      "recommendation": "MANUAL_INSPECTION_REQUIRED",
+      "analyzedAt": "15 Sept 2026, 1:02 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "chk_owner",
+          "category": "IDENTITY",
+          "title": "Owner Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Matched 100% with registered Khatedar & Aadhaar token"
+        },
+        {
+          "id": "chk_survey",
+          "category": "CADASTRE",
+          "title": "Survey Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey 124/7 authenticated on BhuNaksha GIS server"
+        },
+        {
+          "id": "chk_area",
+          "category": "CADASTRE",
+          "title": "Area Mismatch",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Previous record: 2.35 acres | Submitted deed: 3.10 acres (Differs by 0.75 acres)"
+        },
+        {
+          "id": "chk_location",
+          "category": "CADASTRE",
+          "title": "Location Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Village ABC, District XYZ jurisdiction confirmed"
+        },
+        {
+          "id": "chk_date",
+          "category": "LEGAL",
+          "title": "Date Valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date within permissible legal timeline; GRAS e-stamp matched"
+        },
+        {
+          "id": "chk_review",
+          "category": "LEGAL",
+          "title": "Review Required",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Officer inspection mandatory due to 0.75 acre cadastral discrepancy"
+        }
+      ]
+    },
+    "fileName": "Registry.pdf",
+    "fileSize": "0.0 MB",
+    "fileUrl": "/uploads/deed-1789414338106-a9b2416f.pdf",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-1247",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 1:02 am"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789414339172",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789414339172",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 82,
+      "recommendation": "MANUAL_INSPECTION_REQUIRED",
+      "analyzedAt": "15 Sept 2026, 1:02 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "chk_owner",
+          "category": "IDENTITY",
+          "title": "Owner Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Matched 100% with registered Khatedar & Aadhaar token"
+        },
+        {
+          "id": "chk_survey",
+          "category": "CADASTRE",
+          "title": "Survey Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey 124/7 authenticated on BhuNaksha GIS server"
+        },
+        {
+          "id": "chk_area",
+          "category": "CADASTRE",
+          "title": "Area Mismatch",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Previous record: 2.35 acres | Submitted deed: 3.10 acres (Differs by 0.75 acres)"
+        },
+        {
+          "id": "chk_location",
+          "category": "CADASTRE",
+          "title": "Location Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Village ABC, District XYZ jurisdiction confirmed"
+        },
+        {
+          "id": "chk_date",
+          "category": "LEGAL",
+          "title": "Date Valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date within permissible legal timeline; GRAS e-stamp matched"
+        },
+        {
+          "id": "chk_review",
+          "category": "LEGAL",
+          "title": "Review Required",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Officer inspection mandatory due to 0.75 acre cadastral discrepancy"
+        }
+      ]
+    }
+  },
+  {
+    "id": "doc_sub_1789413284885",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "parcel_id": "LR-1247",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "SALE_DEED",
+    "file_name": "Registry.pdf",
+    "file_size": "0.0 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "C:\\Users\\Rishi Sharma\\OneDrive\\Desktop\\PRODUCTION\\DEV BHOOMI\\server\\uploads\\deed-1789413283737-a9b2416f.pdf",
+    "storage_url": "/uploads/deed-1789413283737-a9b2416f.pdf",
+    "file_hash": "0xa9b2416f53afa610b842b41ada25e40969a4e16ef551000696d41cde297a1a83",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2026-09-14T19:14:44.886Z",
+    "extracted_data": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 12:44 am"
+    },
+    "ai_validation_report": {
+      "id": "ai_rep_1789413284885",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789413284885",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 82,
+      "recommendation": "MANUAL_INSPECTION_REQUIRED",
+      "analyzedAt": "15 Sept 2026, 12:44 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "chk_owner",
+          "category": "IDENTITY",
+          "title": "Owner Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Matched 100% with registered Khatedar & Aadhaar token"
+        },
+        {
+          "id": "chk_survey",
+          "category": "CADASTRE",
+          "title": "Survey Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey 124/7 authenticated on BhuNaksha GIS server"
+        },
+        {
+          "id": "chk_area",
+          "category": "CADASTRE",
+          "title": "Area Mismatch",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Previous record: 2.35 acres | Submitted deed: 3.10 acres (Differs by 0.75 acres)"
+        },
+        {
+          "id": "chk_location",
+          "category": "CADASTRE",
+          "title": "Location Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Village ABC, District XYZ jurisdiction confirmed"
+        },
+        {
+          "id": "chk_date",
+          "category": "LEGAL",
+          "title": "Date Valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date within permissible legal timeline; GRAS e-stamp matched"
+        },
+        {
+          "id": "chk_review",
+          "category": "LEGAL",
+          "title": "Review Required",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Officer inspection mandatory due to 0.75 acre cadastral discrepancy"
+        }
+      ]
+    },
+    "fileName": "Registry.pdf",
+    "fileSize": "0.0 MB",
+    "fileUrl": "/uploads/deed-1789413283737-a9b2416f.pdf",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-1247",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 12:44 am"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789413284885",
+      "recordId": "LR-1247",
+      "documentId": "doc_sub_1789413284885",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 82,
+      "recommendation": "MANUAL_INSPECTION_REQUIRED",
+      "analyzedAt": "15 Sept 2026, 12:44 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "chk_owner",
+          "category": "IDENTITY",
+          "title": "Owner Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Matched 100% with registered Khatedar & Aadhaar token"
+        },
+        {
+          "id": "chk_survey",
+          "category": "CADASTRE",
+          "title": "Survey Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey 124/7 authenticated on BhuNaksha GIS server"
+        },
+        {
+          "id": "chk_area",
+          "category": "CADASTRE",
+          "title": "Area Mismatch",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Previous record: 2.35 acres | Submitted deed: 3.10 acres (Differs by 0.75 acres)"
+        },
+        {
+          "id": "chk_location",
+          "category": "CADASTRE",
+          "title": "Location Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Village ABC, District XYZ jurisdiction confirmed"
+        },
+        {
+          "id": "chk_date",
+          "category": "LEGAL",
+          "title": "Date Valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date within permissible legal timeline; GRAS e-stamp matched"
+        },
+        {
+          "id": "chk_review",
+          "category": "LEGAL",
+          "title": "Review Required",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Officer inspection mandatory due to 0.75 acre cadastral discrepancy"
+        }
+      ]
+    }
+  },
+  {
+    "id": "doc_sub_10295",
+    "citizen_id": "user_cit_102",
+    "citizen_name": "Amit Kumar",
+    "parcel_id": "LR-10295",
+    "khasra_no": "88/2",
+    "survey_no": "88/2",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "MUTATION_CERTIFICATE",
+    "file_name": "Mutation.pdf",
+    "file_size": "2.1 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "server/uploads/mock_mutation_10295.pdf",
+    "storage_url": "/mock/mutation_10295.pdf",
+    "file_hash": "0x88bb1944df31ac643e201b10a9f82d11",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2024-03-14T11:30:00Z",
+    "extracted_data": {
+      "documentTitle": "MUTATION ORDER (दाखिल-खारिज आदेश)",
+      "documentType": "Revenue Mutation Order",
+      "registrationNumber": "UK-REV-2024-0192",
+      "registrationDate": "15/01/2024",
+      "subRegistrarOffice": "Tehsildar Court, Sadar",
+      "overallConfidence": 97,
+      "ownerName": "Amit Kumar",
+      "surveyNo": "88/2",
+      "area": "1.80 Acres",
+      "village": "ABC",
+      "district": "XYZ"
+    },
+    "fileName": "Mutation.pdf",
+    "fileSize": "2.1 MB",
+    "fileUrl": "/mock/mutation_10295.pdf",
+    "citizenId": "user_cit_102",
+    "citizenName": "Amit Kumar",
+    "parcelId": "LR-10295",
+    "khasraNo": "88/2",
+    "surveyNo": "88/2",
+    "extractedData": {
+      "documentTitle": "MUTATION ORDER (दाखिल-खारिज आदेश)",
+      "documentType": "Revenue Mutation Order",
+      "registrationNumber": "UK-REV-2024-0192",
+      "registrationDate": "15/01/2024",
+      "subRegistrarOffice": "Tehsildar Court, Sadar",
+      "overallConfidence": 97,
+      "ownerName": "Amit Kumar",
+      "surveyNo": "88/2",
+      "area": "1.80 Acres",
+      "village": "ABC",
+      "district": "XYZ"
+    }
+  },
+  {
+    "id": "doc_sub_10294",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "parcel_id": "LR-10294",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "SALE_DEED",
+    "file_name": "Registry.pdf",
+    "file_size": "4.2 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "server/uploads/mock_deed_10294.pdf",
+    "storage_url": "/mock/deed_10294.pdf",
+    "file_hash": "0x94fa10b7218e8055c9183ec2cf6de1d5",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2024-03-14T09:15:00Z",
+    "extracted_data": {
+      "documentTitle": "REGISTERED SALE DEED (बैनामा)",
+      "documentType": "Registered Sale Deed (क्रेता-विक्रेता विलेख)",
+      "registrationNumber": "UK-DDN-2019-094182",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": "Sub-Registrar Office, Sadar Dehradun",
+      "overallConfidence": 96,
+      "ownerName": "Rishi Sharma",
+      "surveyNo": "124/7",
+      "area": "3.10 Acres",
+      "village": "ABC",
+      "district": "XYZ"
+    },
+    "fileName": "Registry.pdf",
+    "fileSize": "4.2 MB",
+    "fileUrl": "/mock/deed_10294.pdf",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-10294",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "extractedData": {
+      "documentTitle": "REGISTERED SALE DEED (बैनामा)",
+      "documentType": "Registered Sale Deed (क्रेता-विक्रेता विलेख)",
+      "registrationNumber": "UK-DDN-2019-094182",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": "Sub-Registrar Office, Sadar Dehradun",
+      "overallConfidence": 96,
+      "ownerName": "Rishi Sharma",
+      "surveyNo": "124/7",
+      "area": "3.10 Acres",
+      "village": "ABC",
+      "district": "XYZ"
+    }
+  },
+  {
+    "id": "doc_sub_1789411883492",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "parcel_id": "LR-10294",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "doc_type": "SALE_DEED",
+    "file_name": "Registry.pdf",
+    "file_size": "0.0 MB",
+    "mime_type": "application/pdf",
+    "storage_path": "C:\\Users\\Rishi Sharma\\OneDrive\\Desktop\\PRODUCTION\\DEV BHOOMI\\server\\uploads\\deed-1789411882255-a9b2416f.pdf",
+    "storage_url": "/uploads/deed-1789411882255-a9b2416f.pdf",
+    "file_hash": "0xa9b2416f53afa610b842b41ada25e40969a4e16ef551000696d41cde297a1a83",
+    "status": "UNDER_REVIEW",
+    "uploaded_at": "2026-09-14T18:51:23.494Z",
+    "extracted_data": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 12:21 am"
+    },
+    "ai_validation_report": {
+      "id": "ai_rep_1789411883493",
+      "recordId": "rec_uk_10294",
+      "documentId": "doc_sub_1789411883492",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 82,
+      "recommendation": "MANUAL_INSPECTION_REQUIRED",
+      "analyzedAt": "15 Sept 2026, 12:21 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "chk_owner",
+          "category": "IDENTITY",
+          "title": "Owner Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Matched 100% with registered Khatedar & Aadhaar token"
+        },
+        {
+          "id": "chk_survey",
+          "category": "CADASTRE",
+          "title": "Survey Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey 124/7 authenticated on BhuNaksha GIS server"
+        },
+        {
+          "id": "chk_area",
+          "category": "CADASTRE",
+          "title": "Area Mismatch",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Previous record: 2.35 acres | Submitted deed: 3.10 acres (Differs by 0.75 acres)"
+        },
+        {
+          "id": "chk_location",
+          "category": "CADASTRE",
+          "title": "Location Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Village ABC, District XYZ jurisdiction confirmed"
+        },
+        {
+          "id": "chk_date",
+          "category": "LEGAL",
+          "title": "Date Valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date within permissible legal timeline; GRAS e-stamp matched"
+        },
+        {
+          "id": "chk_review",
+          "category": "LEGAL",
+          "title": "Review Required",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Officer inspection mandatory due to 0.75 acre cadastral discrepancy"
+        }
+      ]
+    },
+    "fileName": "Registry.pdf",
+    "fileSize": "0.0 MB",
+    "fileUrl": "/uploads/deed-1789411882255-a9b2416f.pdf",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-10294",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "15 Sept 2026, 12:21 am"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789411883493",
+      "recordId": "rec_uk_10294",
+      "documentId": "doc_sub_1789411883492",
+      "riskLevel": "MEDIUM",
+      "overallConfidenceScore": 82,
+      "recommendation": "MANUAL_INSPECTION_REQUIRED",
+      "analyzedAt": "15 Sept 2026, 12:21 am",
+      "anomaliesDetected": [
+        "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+      ],
+      "checks": [
+        {
+          "id": "chk_owner",
+          "category": "IDENTITY",
+          "title": "Owner Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Matched 100% with registered Khatedar & Aadhaar token"
+        },
+        {
+          "id": "chk_survey",
+          "category": "CADASTRE",
+          "title": "Survey Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Survey 124/7 authenticated on BhuNaksha GIS server"
+        },
+        {
+          "id": "chk_area",
+          "category": "CADASTRE",
+          "title": "Area Mismatch",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Previous record: 2.35 acres | Submitted deed: 3.10 acres (Differs by 0.75 acres)"
+        },
+        {
+          "id": "chk_location",
+          "category": "CADASTRE",
+          "title": "Location Match",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Village ABC, District XYZ jurisdiction confirmed"
+        },
+        {
+          "id": "chk_date",
+          "category": "LEGAL",
+          "title": "Date Valid",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Registration date within permissible legal timeline; GRAS e-stamp matched"
+        },
+        {
+          "id": "chk_review",
+          "category": "LEGAL",
+          "title": "Review Required",
+          "status": "WARNING",
+          "confidence": 0.96,
+          "description": "Officer inspection mandatory due to 0.75 acre cadastral discrepancy"
+        }
+      ]
+    }
+  },
+  {
+    "id": "doc_sub_1789409917582",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-10294",
+    "khasraNo": "124/7",
+    "surveyNo": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "docType": "SALE_DEED",
+    "fileName": "Registry.pdf",
+    "fileSize": "4.2 MB",
+    "fileUrl": "/mock/deed_10294.pdf",
+    "uploadedAt": "14/9/2026",
+    "status": "UNDER_REVIEW",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma (Edited)",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          },
+          "isEdited": true
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "14 Sept 2026, 11:48 pm"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789409917583",
+      "recordId": "rec_uk_10294",
+      "documentId": "doc_sub_1789409917582",
+      "riskLevel": "LOW",
+      "overallConfidenceScore": 96,
+      "recommendation": "RECOMMENDED_FOR_APPROVAL",
+      "analyzedAt": "14 Sept 2026, 11:48 pm",
+      "anomaliesDetected": [],
+      "checks": [
+        {
+          "id": "chk_1",
+          "category": "OCR_FIDELITY",
+          "title": "Indic OCR Optical Character Recognition",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Clear text fidelity without pixel distortion or missing revenue clauses."
+        },
+        {
+          "id": "chk_2",
+          "category": "CADASTRAL_ALIGNMENT",
+          "title": "Cadastral GIS Boundary Alignment",
+          "status": "PASS",
+          "confidence": 0.94,
+          "description": "Survey 124/7 boundary polygon matches current state cadastral maps."
+        }
+      ]
+    }
+  },
+  {
+    "id": "doc_sub_1789409299823",
+    "citizenId": "user_cit_101",
+    "citizenName": "Rishi Sharma",
+    "parcelId": "LR-10294",
+    "khasraNo": "124/7\nKhata",
+    "surveyNo": "124/7\nKhata",
+    "village": "ABC",
+    "district": "XYZ",
+    "docType": "SALE_DEED",
+    "fileName": "Registry.pdf",
+    "fileSize": "4.2 MB",
+    "fileUrl": "/mock/deed_10294.pdf",
+    "uploadedAt": "14/9/2026",
+    "status": "UNDER_REVIEW",
+    "extractedData": {
+      "documentTitle": "CERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)",
+      "documentType": "Registered Absolute Conveyance Deed",
+      "registrationNumber": "UK-XYZ-2019-REG-04821",
+      "registrationDate": "14/08/2019",
+      "subRegistrarOffice": ", District Registrar Dehradun.",
+      "overallConfidence": 96,
+      "fields": {
+        "ownerName": {
+          "label": "Owner",
+          "key": "ownerName",
+          "value": "Rishi Sharma",
+          "confidence": 0.97,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 38,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "surveyNo": {
+          "label": "Survey No.",
+          "key": "surveyNo",
+          "value": "124/7\nKhata",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 44,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "area": {
+          "label": "Area",
+          "key": "area",
+          "value": "2.35 Acres",
+          "confidence": 0.94,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 50,
+            "width": 22,
+            "height": 4.5
+          }
+        },
+        "village": {
+          "label": "Village",
+          "key": "village",
+          "value": "ABC",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 56,
+            "width": 20,
+            "height": 4.5
+          }
+        },
+        "district": {
+          "label": "District",
+          "key": "district",
+          "value": "XYZ",
+          "confidence": 0.98,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 62,
+            "width": 18,
+            "height": 4.5
+          }
+        },
+        "registrationDate": {
+          "label": "Registration Date",
+          "key": "registrationDate",
+          "value": "14/08/2019",
+          "confidence": 0.99,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 68,
+            "width": 24,
+            "height": 4.5
+          }
+        },
+        "sellerName": {
+          "label": "Seller / Vendor",
+          "key": "sellerName",
+          "value": "Ram Gopal Sharma",
+          "confidence": 0.95,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 74,
+            "width": 28,
+            "height": 4.5
+          }
+        },
+        "considerationAmount": {
+          "label": "Consideration Amount",
+          "key": "considerationAmount",
+          "value": "₹ 62,50,000",
+          "confidence": 0.96,
+          "sourceBoundingBox": {
+            "x": 42,
+            "y": 80,
+            "width": 24,
+            "height": 4.5
+          }
+        }
+      },
+      "rawExtractedText": "GOVERNMENT OF UTTARAKHAND / राजस्व विभाग\nSUB-REGISTRAR OFFICE (उप-पंजीयक कार्यालय), VIKASNAGAR / DEHRADUN\nCERTIFIED REGISTERED CONVEYANCE SALE DEED (बैनामा)\nBook No. 1, Volume 4182, Pages 110-128\nRegistration No: UK-XYZ-2019-REG-04821\nExecution Date: 14/08/2019\n\nLAND SCHEDULE & PARCEL SPECIFICATIONS:\nSurvey Number / Khasra No.: 124/7\nKhata No.: 0042\nVillage / Mauza: ABC\nTehsil: Central Tehsil\nDistrict: XYZ\nTotal Area: 2.35 Acres (equivalent to 0.951 Hectares)\nLand Classification: Agricultural (कृषि भूमि)\n\nPARTIES TO CONVEYANCE:\nCurrent Purchaser / Recorded Owner: Rishi Sharma\nFather's Name: Late Bipin Chandra Sharma\nUIDAI Biometric Verified Token: XXXX-XXXX-8492\nVendor / Seller: Ram Gopal Sharma\nTotal Consideration Paid: ₹ 62,50,000/- (Rupees Sixty Two Lakhs Fifty Thousand Only)\nState Stamp Duty GRAS Challan: UK-GRAS-2019-CH-994101 (₹ 3,75,000 Paid)\n\nFOUR CADASTRAL BOUNDARIES (चौहद्दी):\nNorth: Plot No. 124/6 (Dharampal Agricultural Land)\nSouth: State Irrigation Canal (राजवाहा)\nEast: Link Road 12m wide\nWest: Khasra 124/8 (Private Orchard)\n\nAUTHENTICATION:\nVerified by Sub-Registrar Office, District Registrar Dehradun.\nDigital Tamper Seal Hash: 0x8f2a11b98cf982e043bc123490aafe876251b",
+      "ocrEngineVersion": "BhoomiLens-Indic-VisionOCR-v4.2",
+      "processedAt": "14 Sept 2026, 11:38 pm"
+    },
+    "aiValidationReport": {
+      "id": "ai_rep_1789409299824",
+      "recordId": "rec_uk_10294",
+      "documentId": "doc_sub_1789409299823",
+      "riskLevel": "LOW",
+      "overallConfidenceScore": 96,
+      "recommendation": "RECOMMENDED_FOR_APPROVAL",
+      "analyzedAt": "14 Sept 2026, 11:38 pm",
+      "anomaliesDetected": [],
+      "checks": [
+        {
+          "id": "chk_1",
+          "category": "OCR_FIDELITY",
+          "title": "Indic OCR Optical Character Recognition",
+          "status": "PASS",
+          "confidence": 0.96,
+          "description": "Clear text fidelity without pixel distortion or missing revenue clauses."
+        },
+        {
+          "id": "chk_2",
+          "category": "CADASTRAL_ALIGNMENT",
+          "title": "Cadastral GIS Boundary Alignment",
+          "status": "PASS",
+          "confidence": 0.94,
+          "description": "Survey 124/7 boundary polygon matches current state cadastral maps."
+        }
+      ]
+    }
+  }
+]

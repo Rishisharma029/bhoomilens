@@ -1,0 +1,36 @@
+[
+  {
+    "id": "cor_req_101",
+    "document_id": "doc_sub_10294",
+    "parcel_id": "LR-10294",
+    "khasra_no": "124/7",
+    "survey_no": "124/7",
+    "village": "ABC",
+    "district": "XYZ",
+    "citizen_id": "user_cit_101",
+    "citizen_name": "Rishi Sharma",
+    "requested_type_title": "Owner Name correction",
+    "reason": "INCORRECT_OWNER_NAME",
+    "description": "The Khatauni record currently reflects Rishi Kumar due to a clerical typo at the Tehsil registry during computerized entry. Actual Aadhaar and registered sale deed reflect Rishi Sharma.",
+    "current_value": "Rishi Kumar",
+    "requested_value": "Rishi Sharma",
+    "evidence_doc_name": "Name_Affidavit_Gazette.pdf",
+    "evidence_doc_type": "GAZETTE_AFFIDAVIT",
+    "evidence_doc_url": "/mock/evidence_gazette.pdf",
+    "ai_assessment_json": {
+      "match_confidence": 94,
+      "verdict": "Likely Match — 94%",
+      "levenshtein_distance": 4,
+      "phonetic_match": true,
+      "risk_score": 6,
+      "notes": "Aadhaar demographic data and registered deed share identical father name and residential address. Typo in surname is consistent with phonetic transcription error."
+    },
+    "requested_changes_json": {
+      "field": "owner_name",
+      "from": "Rishi Kumar",
+      "to": "Rishi Sharma"
+    },
+    "status": "UNDER_REVIEW",
+    "submitted_at": "2026-09-14T19:01:10.400Z"
+  }
+]

@@ -1,0 +1,232 @@
+export type UserRole = 'CITIZEN' | 'ADMIN';
+
+export interface User {
+  id: string;
+  name: string;
+  role: UserRole;
+  email: string;
+  phone: string;
+  aadhaarMasked?: string;
+  designation?: string;
+  jurisdiction?: string;
+  avatarUrl?: string;
+}
+
+export type RecordStatus = 
+  | 'VERIFIED'
+  | 'UNDER_REVIEW'
+  | 'ACTION_REQUIRED'
+  | 'CONFLICT'
+  | 'PENDING_AI'
+  | 'FLAGGED_DISCREPANCY'
+  | 'CORRECTION_REQUESTED'
+  | 'REJECTED';
+
+export interface CoOwner {
+  name: string;
+  relation: string;
+  share: string; // e.g. "1/2" or "25%"
+}
+
+export interface LandBoundaries {
+  north: string;
+  south: string;
+  east: string;
+  west: string;
+}
+
+export interface OwnershipHistoryStep {
+  id: string;
+  previousOwner: string;
+  transactionType: string; // e.g. "Registered Sale Conveyance", "Ancestral Succession Mutation"
+  transactionDate: string;
+  currentOwner: string;
+  deedRegistrationNo: string;
+  considerationAmount?: string;
+  subRegistrarOffice?: string;
+}
+
+export interface AttachedDocument {
+  id: string;
+  title: string;
+  fileName: string;
+  fileSize: string;
+  fileType: string;
+  uploadedAt: string;
+  isVerified?: boolean;
+}
+
+export interface ValidationSummary {
+  checksPassed: number;
+  warnings: number;
+  criticalConflicts: number;
+  checks: Array<{
+    name: string;
+    category: 'CADASTRE' | 'IDENTITY' | 'LEGAL' | 'TAX';
+    status: 'PASS' | 'WARNING' | 'FAIL';
+    message: string;
+  }>;
+}
+
+export interface LandRecord {
+  id: string;
+  parcelId: string; // e.g. LR-10294
+  surveyNo: string; // e.g. 124/7
+  khasraNo: string;
+  khataNo: string;
+  district: string;
+  tehsil: string;
+  village: string;
+  area: number;
+  areaUnit: 'Acres' | 'Hectares' | 'Nali' | 'Bigha';
+  landType: 'Agricultural' | 'Residential' | 'Commercial' | 'Forest/Barren';
+  ownerName: string;
+  fatherName: string;
+  aadhaarLastFour: string;
+  coOwners: CoOwner[];
+  boundaries: LandBoundaries;
+  marketValueEstimate: number; // in INR
+  status: RecordStatus;
+  lastUpdated: string;
+  lastMutationDate: string;
+  qrCodeId: string;
+  digitalSealHash?: string;
+  encumbranceNotes?: string;
+  documentsCount: number;
+  ownershipHistory?: OwnershipHistoryStep[];
+  attachedDocuments?: AttachedDocument[];
+  validationSummary?: ValidationSummary;
+}
+
+export interface ExtractedField {
+  label: string;
+  key: string;
+  value: string;
+  confidence: number; // 0.0 to 1.0 (e.g. 0.96 is 96%)
+  source?: string; // e.g. "page 1", "page 2", "page 2, line 14"
+  isEdited?: boolean;
+  originalValue?: string;
+  sourceBoundingBox?: { x: number; y: number; width: number; height: number };
+}
+
+export interface ExtractedData {
+  documentTitle: string;
+  documentType: string;
+  registrationNumber: string;
+  registrationDate: string;
+  subRegistrarOffice: string;
+  overallConfidence: number; // e.g. 96
+  fields: Record<string, ExtractedField>;
+  rawExtractedText: string;
+  ocrEngineVersion: string;
+  processedAt: string;
+}
+
+export interface AICheckItem {
+  id: string;
+  category: 'OCR_FIDELITY' | 'CADASTRAL_ALIGNMENT' | 'TAMPERING_ANALYSIS' | 'ENCUMBRANCE_CHECK';
+  title: string;
+  status: 'PASS' | 'WARNING' | 'FAIL';
+  confidence: number;
+  description: string;
+  detectedDiscrepancy?: string;
+}
+
+export interface AIValidationReport {
+  id: string;
+  recordId: string;
+  documentId: string;
+  riskLevel: 'LOW' | 'MEDIUM' | 'HIGH';
+  overallConfidenceScore: number; // 0 to 100
+  checks: AICheckItem[];
+  anomaliesDetected: string[];
+  cadastralDiscrepancyPercentage?: number;
+  tamperingAlerts?: string[];
+  recommendation: 'RECOMMENDED_FOR_APPROVAL' | 'MANUAL_INSPECTION_REQUIRED' | 'HIGH_FRAUD_RISK';
+  analyzedAt: string;
+}
+
+export interface DocumentSubmission {
+  id: string;
+  citizenId: string;
+  citizenName: string;
+  parcelId?: string;
+  khasraNo: string;
+  surveyNo?: string;
+  village: string;
+  district: string;
+  docType: 'SALE_DEED' | 'KHATAUNI' | 'MUTATION_CERTIFICATE' | 'GIFT_DEED' | 'PARTITION_DEED';
+  fileName: string;
+  fileSize: string;
+  fileUrl: string;
+  uploadedAt: string;
+  status: RecordStatus;
+  extractedData?: ExtractedData;
+  aiValidationReport?: AIValidationReport;
+  correctionRemarks?: string;
+  reviewerRemarks?: string;
+  reviewedBy?: string;
+  reviewedAt?: string;
+}
+
+export interface CorrectionRequest {
+  id: string;
+  documentId: string;
+  parcelId?: string;
+  khasraNo: string;
+  surveyNo?: string;
+  village?: string;
+  district?: string;
+  citizenId: string;
+  citizenName: string;
+  requestedTypeTitle?: string; // e.g. "Owner Name correction"
+  reason: 'INCORRECT_OWNER_NAME' | 'AREA_MISMATCH' | 'BOUNDARY_ERROR' | 'SHARE_RATIO_DISPUTE' | 'MISSING_COOWNER' | 'OTHER';
+  description: string;
+  currentValue?: string; // e.g. "Rishi Kumar"
+  requestedValue?: string; // e.g. "Rishi Sharma"
+  evidenceDocName?: string; // e.g. "Name correction document"
+  evidenceDocType?: string; // e.g. "Gazette Notification & Aadhaar Verification"
+  evidenceDocUrl?: string;
+  aiAssessment?: {
+    matchLabel: string; // "Likely Match"
+    score: number; // 94
+    summary: string;
+    signals: Array<{
+      label: string;
+      status: 'PASS' | 'WARNING' | 'FAIL';
+      detail: string;
+    }>;
+  };
+  requestedChanges: Array<{
+    field: string;
+    oldValue: string;
+    newValue: string;
+  }>;
+  status: 'SUBMITTED' | 'UNDER_REVIEW' | 'APPROVED' | 'REJECTED';
+  submittedAt: string;
+  resolvedAt?: string;
+  officerNotes?: string;
+  sealHash?: string;
+}
+
+export interface AuditLog {
+  id: string;
+  recordId: string;
+  khasraNo: string;
+  action: 
+    | 'DOCUMENT_UPLOADED'
+    | 'OCR_EXTRACTION_COMPLETED'
+    | 'CORRECTION_SUBMITTED'
+    | 'AI_VERIFICATION_TRIGGERED'
+    | 'DISCREPANCY_FLAGGED'
+    | 'RECORD_APPROVED'
+    | 'RECORD_REJECTED'
+    | 'DIGITAL_SEAL_GENERATED';
+  performedBy: string;
+  role: UserRole | 'AI_SYSTEM';
+  timestamp: string;
+  ipAddress: string;
+  blockHash: string;
+  prevBlockHash: string;
+  details: string;
+}

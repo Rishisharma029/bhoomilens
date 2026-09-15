@@ -1,0 +1,556 @@
+[
+  {
+    "id": "val_res_rec_uk_10294",
+    "document_id": "rec_uk_10294",
+    "record_id": "LR-10294",
+    "risk_level": "MEDIUM",
+    "overall_confidence_score": 86,
+    "recommendation": "MANUAL_REVIEW",
+    "is_area_mismatch": true,
+    "is_owner_conflict": false,
+    "ai_explanation": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed.",
+    "checks_json": {
+      "passed_count": 7,
+      "warning_count": 1,
+      "conflict_count": 0,
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "name": "Required field present",
+          "category": "COMPLETENESS",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "6/6 fields populated",
+          "expected_value": "6/6 required fields",
+          "confidence": 100,
+          "detail": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "name": "Area is numerically valid",
+          "category": "METRIC",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "2.35 Acres",
+          "expected_value": "> 0 and <= 50,000",
+          "confidence": 100,
+          "detail": "Area \"2.35 Acres\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "name": "Date is valid",
+          "category": "TEMPORAL",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "14/08/2019",
+          "expected_value": "Valid date between 1850 and today",
+          "confidence": 100,
+          "detail": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "name": "Survey number format valid",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "124/7",
+          "expected_value": "Regex ^[0-9]+(/[0-9]+)?...",
+          "confidence": 100,
+          "detail": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "name": "Duplicate survey/parcel detection",
+          "category": "REGISTRY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Survey 124/7",
+          "expected_value": "Unique active registration",
+          "confidence": 100,
+          "detail": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "name": "Owner-name similarity",
+          "category": "IDENTITY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Rishi Sharma",
+          "expected_value": "Rishi Sharma",
+          "confidence": 100,
+          "detail": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "name": "Area difference against previous record",
+          "category": "METRIC",
+          "status": "WARNING",
+          "icon": "⚠",
+          "extracted_value": "3.10 Acres",
+          "expected_value": "2.35 Acres",
+          "confidence": 52,
+          "detail": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "name": "Referenced parcel exists",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Parcel LR-10294",
+          "expected_value": "Verified in Master Cadastre",
+          "confidence": 100,
+          "detail": "Referenced cadastral parcel LR-10294 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "analyzed_at": "2026-09-15T09:27:22.749Z"
+  },
+  {
+    "id": "val_res_doc_sub_1789415635859",
+    "document_id": "doc_sub_1789415635859",
+    "record_id": "LR-10294",
+    "risk_level": "MEDIUM",
+    "overall_confidence_score": 86,
+    "recommendation": "MANUAL_REVIEW",
+    "is_area_mismatch": true,
+    "is_owner_conflict": false,
+    "ai_explanation": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed.",
+    "checks_json": {
+      "passed_count": 7,
+      "warning_count": 1,
+      "conflict_count": 0,
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "name": "Required field present",
+          "category": "COMPLETENESS",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "6/6 fields populated",
+          "expected_value": "6/6 required fields",
+          "confidence": 100,
+          "detail": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "name": "Area is numerically valid",
+          "category": "METRIC",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "2.35 Acres",
+          "expected_value": "> 0 and <= 50,000",
+          "confidence": 100,
+          "detail": "Area \"2.35 Acres\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "name": "Date is valid",
+          "category": "TEMPORAL",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "14/08/2019",
+          "expected_value": "Valid date between 1850 and today",
+          "confidence": 100,
+          "detail": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "name": "Survey number format valid",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "124/7",
+          "expected_value": "Regex ^[0-9]+(/[0-9]+)?...",
+          "confidence": 100,
+          "detail": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "name": "Duplicate survey/parcel detection",
+          "category": "REGISTRY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Survey 124/7",
+          "expected_value": "Unique active registration",
+          "confidence": 100,
+          "detail": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "name": "Owner-name similarity",
+          "category": "IDENTITY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Rishi Sharma",
+          "expected_value": "Rishi Sharma",
+          "confidence": 100,
+          "detail": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "name": "Area difference against previous record",
+          "category": "METRIC",
+          "status": "WARNING",
+          "icon": "⚠",
+          "extracted_value": "3.10 Acres",
+          "expected_value": "2.35 Acres",
+          "confidence": 52,
+          "detail": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "name": "Referenced parcel exists",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Parcel LR-10294",
+          "expected_value": "Verified in Master Cadastre",
+          "confidence": 100,
+          "detail": "Referenced cadastral parcel LR-10294 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "analyzed_at": "2026-09-15T09:13:25.739Z"
+  },
+  {
+    "id": "val_res_rec_uk_10482",
+    "document_id": "rec_uk_10482",
+    "record_id": "LR-10482",
+    "risk_level": "MEDIUM",
+    "overall_confidence_score": 86,
+    "recommendation": "MANUAL_REVIEW",
+    "is_area_mismatch": true,
+    "is_owner_conflict": false,
+    "ai_explanation": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed.",
+    "checks_json": {
+      "passed_count": 7,
+      "warning_count": 1,
+      "conflict_count": 0,
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "name": "Required field present",
+          "category": "COMPLETENESS",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "6/6 fields populated",
+          "expected_value": "6/6 required fields",
+          "confidence": 100,
+          "detail": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "name": "Area is numerically valid",
+          "category": "METRIC",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "2.35 Acres",
+          "expected_value": "> 0 and <= 50,000",
+          "confidence": 100,
+          "detail": "Area \"2.35 Acres\" successfully parsed as 2.35 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "name": "Date is valid",
+          "category": "TEMPORAL",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "14/08/2019",
+          "expected_value": "Valid date between 1850 and today",
+          "confidence": 100,
+          "detail": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "name": "Survey number format valid",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "124/7",
+          "expected_value": "Regex ^[0-9]+(/[0-9]+)?...",
+          "confidence": 100,
+          "detail": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "name": "Duplicate survey/parcel detection",
+          "category": "REGISTRY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Survey 124/7",
+          "expected_value": "Unique active registration",
+          "confidence": 100,
+          "detail": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "name": "Owner-name similarity",
+          "category": "IDENTITY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Rishi Sharma",
+          "expected_value": "Rishi Sharma",
+          "confidence": 100,
+          "detail": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "name": "Area difference against previous record",
+          "category": "METRIC",
+          "status": "WARNING",
+          "icon": "⚠",
+          "extracted_value": "3.10 Acres",
+          "expected_value": "2.35 Acres",
+          "confidence": 52,
+          "detail": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "name": "Referenced parcel exists",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Parcel LR-10482",
+          "expected_value": "Verified in Master Cadastre",
+          "confidence": 100,
+          "detail": "Referenced cadastral parcel LR-10482 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "analyzed_at": "2026-09-15T09:04:16.284Z"
+  },
+  {
+    "id": "val_res_LR_10294",
+    "document_id": "doc_sub_10294",
+    "record_id": "LR-10294",
+    "risk_level": "MEDIUM",
+    "overall_confidence_score": 86,
+    "recommendation": "MANUAL_REVIEW",
+    "is_area_mismatch": true,
+    "is_owner_conflict": false,
+    "ai_explanation": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed.",
+    "checks_json": {
+      "passed_count": 7,
+      "warning_count": 1,
+      "conflict_count": 0,
+      "checks": [
+        {
+          "id": "rule_required_fields",
+          "name": "Required field present",
+          "category": "COMPLETENESS",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "6/6 fields populated",
+          "expected_value": "6/6 required fields",
+          "confidence": 100,
+          "detail": "All 6 mandatory cadastral fields present (Owner, Survey No, Area, Village, District, Date)."
+        },
+        {
+          "id": "rule_numeric_area",
+          "name": "Area is numerically valid",
+          "category": "METRIC",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "3.1 Acres",
+          "expected_value": "> 0 and <= 50,000",
+          "confidence": 100,
+          "detail": "Area \"3.10 Acres\" successfully parsed as 3.10 numeric units within valid bounds."
+        },
+        {
+          "id": "rule_valid_date",
+          "name": "Date is valid",
+          "category": "TEMPORAL",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "14/08/2019",
+          "expected_value": "Valid date between 1850 and today",
+          "confidence": 100,
+          "detail": "Registration date 14/08/2019 is a valid historical calendar date."
+        },
+        {
+          "id": "rule_survey_format",
+          "name": "Survey number format valid",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "124/7",
+          "expected_value": "Regex ^[0-9]+(/[0-9]+)?...",
+          "confidence": 100,
+          "detail": "Survey number \"124/7\" conforms to statutory Revenue Code subdivision format."
+        },
+        {
+          "id": "rule_duplicate_detection",
+          "name": "Duplicate survey/parcel detection",
+          "category": "REGISTRY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Survey 124/7",
+          "expected_value": "Unique active registration",
+          "confidence": 100,
+          "detail": "No duplicate or conflicting active ownership claims on Survey 124/7 in Village ABC."
+        },
+        {
+          "id": "rule_owner_similarity",
+          "name": "Owner-name similarity",
+          "category": "IDENTITY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Rishi Sharma",
+          "expected_value": "Rishi Sharma",
+          "confidence": 100,
+          "detail": "Owner name matches registered Khatedar with 100% fidelity."
+        },
+        {
+          "id": "rule_area_difference",
+          "name": "Area difference against previous record",
+          "category": "METRIC",
+          "status": "WARNING",
+          "icon": "⚠",
+          "extracted_value": "3.10 Acres",
+          "expected_value": "2.35 Acres",
+          "confidence": 52,
+          "detail": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "rule_parcel_exists",
+          "name": "Referenced parcel exists",
+          "category": "CADASTRE",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Parcel LR-10294",
+          "expected_value": "Verified in Master Cadastre",
+          "confidence": 100,
+          "detail": "Referenced cadastral parcel LR-10294 (Survey 124/7) authenticated in Village ABC GIS cadastre."
+        }
+      ]
+    },
+    "analyzed_at": "2026-09-15T08:58:30.253Z"
+  },
+  {
+    "id": "val_res_10295",
+    "document_id": "doc_sub_10295",
+    "record_id": "LR-10295",
+    "risk_level": "LOW",
+    "overall_confidence_score": 97,
+    "recommendation": "RECOMMENDED_FOR_APPROVAL",
+    "is_area_mismatch": false,
+    "is_owner_conflict": false,
+    "ai_explanation": "All cadastral fields, boundaries, and mutation chain verify with 97% confidence.",
+    "checks_json": {
+      "passed_count": 9,
+      "warning_count": 0,
+      "conflict_count": 0,
+      "checks": [
+        {
+          "id": "chk_owner_95",
+          "name": "Owner Match",
+          "category": "IDENTITY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Amit Kumar",
+          "expected_value": "Amit Kumar",
+          "confidence": 99,
+          "detail": "Owner identity verified with zero variance."
+        },
+        {
+          "id": "chk_area_95",
+          "name": "Area Match",
+          "category": "METRIC",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "1.80 Acres",
+          "expected_value": "1.80 Acres",
+          "confidence": 98,
+          "detail": "Area exactly matches master record."
+        }
+      ]
+    },
+    "analyzed_at": "2026-09-14T19:01:10.378Z"
+  },
+  {
+    "id": "val_res_10294",
+    "document_id": "doc_sub_10294",
+    "record_id": "LR-10294",
+    "risk_level": "MEDIUM",
+    "overall_confidence_score": 82,
+    "recommendation": "MANUAL_INSPECTION_REQUIRED",
+    "is_area_mismatch": true,
+    "is_owner_conflict": false,
+    "ai_explanation": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed.",
+    "checks_json": {
+      "passed_count": 8,
+      "warning_count": 1,
+      "conflict_count": 0,
+      "checks": [
+        {
+          "id": "chk_owner",
+          "name": "Owner Match",
+          "category": "IDENTITY",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Rishi Sharma",
+          "expected_value": "Rishi Sharma",
+          "confidence": 98,
+          "detail": "Owner name exactly matches the official revenue record."
+        },
+        {
+          "id": "chk_survey",
+          "name": "Survey Match",
+          "category": "GEOSPATIAL",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "124/7",
+          "expected_value": "124/7",
+          "confidence": 99,
+          "detail": "Survey & Khasra parcel bounds correctly aligned."
+        },
+        {
+          "id": "chk_area",
+          "name": "Area Mismatch",
+          "category": "METRIC",
+          "status": "WARNING",
+          "icon": "⚠",
+          "extracted_value": "3.10 Acres",
+          "expected_value": "2.35 Acres",
+          "confidence": 76,
+          "detail": "Area differs from the previous registered record by 0.75 acres. Supporting documentation should be reviewed."
+        },
+        {
+          "id": "chk_loc",
+          "name": "Location Match",
+          "category": "GEOSPATIAL",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "Village ABC, District XYZ",
+          "expected_value": "Village ABC, District XYZ",
+          "confidence": 97,
+          "detail": "Village and Tehsil jurisdiction matched."
+        },
+        {
+          "id": "chk_date",
+          "name": "Date Valid",
+          "category": "LEGAL",
+          "status": "PASSED",
+          "icon": "✓",
+          "extracted_value": "14/08/2019",
+          "expected_value": "Within valid registration period",
+          "confidence": 95,
+          "detail": "Deed execution stamp date is legally coherent."
+        },
+        {
+          "id": "chk_rev",
+          "name": "Review Required",
+          "category": "LEGAL",
+          "status": "WARNING",
+          "icon": "⚠",
+          "extracted_value": "Manual Verification Recommended",
+          "expected_value": "Automatic Clearance",
+          "confidence": 82,
+          "detail": "Due to area divergence, Sub-Divisional Magistrate manual inspection is mandatory."
+        }
+      ]
+    },
+    "analyzed_at": "2026-09-14T19:01:10.376Z"
+  }
+]

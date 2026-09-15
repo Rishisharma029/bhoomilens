@@ -1,0 +1,32 @@
+[
+  {
+    "id": "user_cit_101",
+    "name": "Rishi Sharma",
+    "email": "rishi.sharma@uttarakhand.gov.in",
+    "role": "CITIZEN",
+    "aadhaar_masked": "XXXX-XXXX-8921",
+    "designation": "Registered Landholder / Citizen",
+    "jurisdiction": "District Dehradun, Tehsil Rishikesh",
+    "created_at": "2026-09-14T19:01:10.300Z"
+  },
+  {
+    "id": "admin_adm_501",
+    "name": "Rajeshwar Singh Negi",
+    "email": "sdm.dehradun@uk.gov.in",
+    "role": "ADMIN",
+    "aadhaar_masked": "XXXX-XXXX-4412",
+    "designation": "Sub-Divisional Magistrate (SDM)",
+    "jurisdiction": "Dehradun Sub-Division, Tehsil Sadar",
+    "created_at": "2026-09-14T19:01:10.304Z"
+  },
+  {
+    "id": "rev_officer_204",
+    "name": "Ramesh Chandra Verma",
+    "email": "lekhpal.sadar@uk.gov.in",
+    "role": "REVENUE_OFFICER",
+    "aadhaar_masked": "XXXX-XXXX-7109",
+    "designation": "Revenue Inspector / Lekhpal",
+    "jurisdiction": "Halka No. 4, Village ABC",
+    "created_at": "2026-09-14T19:01:10.324Z"
+  }
+]
