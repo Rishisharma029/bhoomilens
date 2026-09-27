@@ -133,6 +133,89 @@ export interface DocumentClassificationResult {
   };
 }
 
+export type DocumentRegionType = 
+  | 'PRINTED_TEXT' 
+  | 'HANDWRITTEN_ANNOTATION' 
+  | 'STAMP_SEAL' 
+  | 'TABLE_FORM';
+
+export interface RegionBoundingBox {
+  x: number;      // 0..100 percentage
+  y: number;      // 0..100 percentage
+  width: number;  // 0..100 percentage
+  height: number; // 0..100 percentage
+}
+
+export interface DocumentRegion {
+  id: string;
+  type: DocumentRegionType;
+  label: string;
+  pageNumber: number;
+  bbox: RegionBoundingBox;
+  confidence: number;
+  extractedText: string;
+  script?: 'Devanagari' | 'Latin' | 'Urdu/Perso-Arabic' | 'Mixed';
+  metadata?: Record<string, any>;
+}
+
+export interface HandwrittenAnnotation {
+  id: string;
+  pageNumber: number;
+  bbox: RegionBoundingBox;
+  rawText: string;
+  confidence: number;
+  intent: 'CORRECTION_OVERRIDE' | 'MARGINAL_NOTE' | 'OFFICER_ENDORSEMENT' | 'SIGNATURE';
+  targetField?: string;
+  originalPrintedValue?: string;
+  handwrittenOverrideValue?: string;
+  isCounterSigned: boolean;
+  endorsingAuthority?: string;
+  riskAssessment: 'VERIFIED_OFFICIAL_AMENDMENT' | 'SUSPICIOUS_UNENDORSED_ALTERATION' | 'INFORMAL_MARGIN_NOTE';
+  explanation: string;
+}
+
+export interface StampSealItem {
+  id: string;
+  pageNumber: number;
+  bbox: RegionBoundingBox;
+  sealType: 'SUB_REGISTRAR_SEAL' | 'REVENUE_COURT_SEAL' | 'TREASURY_CHALLAN' | 'NOTARY_SEAL';
+  issuingAuthority: string;
+  dateOnSeal?: string;
+  confidence: number;
+  isAuthentic: boolean;
+  serialNumber?: string;
+}
+
+export interface TableFormItem {
+  id: string;
+  pageNumber: number;
+  bbox: RegionBoundingBox;
+  tableType: 'KHATAUNI_12_COLUMNS' | 'VILLAGE_FORM_7_12' | 'PARCEL_SCHEDULE';
+  title: string;
+  rowsCount: number;
+  columnsCount: number;
+  headers: string[];
+  sampleData: Record<string, string>[];
+}
+
+export interface DocumentLayoutAnalysisResult {
+  engine: string;
+  totalPages: number;
+  regions: DocumentRegion[];
+  handwrittenAnnotations: HandwrittenAnnotation[];
+  stampsAndSeals: StampSealItem[];
+  tablesAndForms: TableFormItem[];
+  summary: {
+    printedTextCount: number;
+    handwrittenCount: number;
+    stampSealCount: number;
+    tableFormCount: number;
+    hasHandwrittenCorrections: boolean;
+    tamperingRiskLevel: 'NONE' | 'LOW' | 'HIGH';
+    activeCorrectionAlert?: string;
+  };
+}
+
 export interface ExtractedField {
   label: string;
   key: string;
@@ -141,6 +224,8 @@ export interface ExtractedField {
   source?: string; // e.g. "page 1", "page 2", "page 2, line 14"
   isEdited?: boolean;
   originalValue?: string;
+  isHandwrittenOverride?: boolean;
+  handwrittenOverrideValue?: string;
   sourceBoundingBox?: { x: number; y: number; width: number; height: number };
 }
 
@@ -149,6 +234,7 @@ export interface ExtractedData {
   documentType: string;
   classification?: DocumentClassificationResult;
   specializedData?: Record<string, any>;
+  layoutAnalysis?: DocumentLayoutAnalysisResult;
   registrationNumber: string;
   registrationDate: string;
   subRegistrarOffice: string;

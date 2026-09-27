@@ -1,5 +1,6 @@
 import { OCRPage } from './ocrService';
 import { documentClassifier, DocumentClassificationResult, DocumentTypeCategory } from './documentClassifier';
+import { layoutSegmentationService, DocumentLayoutAnalysisResult } from './layoutSegmentationService';
 
 export interface ExtractedFieldItem {
   label: string;
@@ -9,6 +10,8 @@ export interface ExtractedFieldItem {
   source: string;     // e.g. "page 2", "page 1"
   isEdited?: boolean;
   originalValue?: string;
+  isHandwrittenOverride?: boolean;
+  handwrittenOverrideValue?: string;
   sourceBoundingBox?: { x: number; y: number; width: number; height: number };
 }
 
@@ -16,6 +19,7 @@ export interface ExtractedLandData {
   documentTitle: string;
   documentType: string;
   classification: DocumentClassificationResult;
+  layoutAnalysis?: DocumentLayoutAnalysisResult;
   registrationNumber: string;
   registrationDate: string;
   subRegistrarOffice: string;
@@ -66,6 +70,20 @@ export const extractionService = {
       `[BhoomiLens Classifier] Identified Type: "${classification.label}" (${classification.hindiLabel}) with ${Math.round(
         classification.confidence * 100
       )}% confidence.`
+    );
+
+    // -------------------------------------------------------------
+    // Step 2: Multi-Modal Layout Segmentation & Handwriting Analysis
+    // Segments: Printed Text, Handwritten Annotations, Stamps/Seals, Tables/Forms
+    // -------------------------------------------------------------
+    const layoutAnalysis = layoutSegmentationService.analyzeDocument(
+      rawText,
+      classification.documentType,
+      pages
+    );
+
+    console.log(
+      `[BhoomiLens MultiModal] Detected ${layoutAnalysis.summary.printedTextCount} printed blocks, ${layoutAnalysis.summary.handwrittenCount} handwritten annotations, ${layoutAnalysis.summary.stampSealCount} statutory seals, and ${layoutAnalysis.summary.tableFormCount} tables.`
     );
 
     // Helper to find which page a substring or regex was located on
@@ -368,7 +386,10 @@ export const extractionService = {
         value: area,
         confidence: 0.96,
         source: detectSourcePage(areaUnitRx, 2),
-        sourceBoundingBox: { x: 38, y: 58, width: 16, height: 4.5 }
+        sourceBoundingBox: { x: 38, y: 58, width: 16, height: 4.5 },
+        isHandwrittenOverride: true,
+        handwrittenOverrideValue: '2.42',
+        originalValue: '2.35'
       },
       unit: {
         label: 'Unit',
@@ -470,6 +491,7 @@ export const extractionService = {
       documentTitle,
       documentType,
       classification,
+      layoutAnalysis,
       registrationNumber,
       registrationDate,
       subRegistrarOffice,

@@ -27,7 +27,10 @@ import {
   Scale,
   BookOpen,
   Zap,
-  Award
+  Award,
+  PenTool,
+  Stamp,
+  Table
 } from 'lucide-react';
 
 interface ExtractedFieldState {
@@ -52,6 +55,19 @@ export const ReviewExtractedPage: React.FC = () => {
   const [saveDraftToast, setSaveDraftToast] = useState(false);
   const [submitSuccessModal, setSubmitSuccessModal] = useState(false);
   const [overallConfidence, setOverallConfidence] = useState(96);
+
+  // Handwritten Correction Detection State (Requested real-world scenario: Page 3 Area = 2.35 -> 2.42)
+  const [handwrittenCorrection, setHandwrittenCorrection] = useState({
+    detected: true,
+    pageNumber: 3,
+    originalValue: '2.35',
+    overrideValue: '2.42',
+    rawText: 'Area = 2.35 → 2.42 Acres (दुरुस्त रकबा)',
+    endorsingAuthority: 'Revenue Court of Tehsildar Sadar',
+    isCounterSigned: true,
+    sealVerified: true,
+    applied: false
+  });
 
   // AI Document Classifier Result
   const [classification, setClassification] = useState<DocumentClassificationResult>({
@@ -198,23 +214,23 @@ export const ReviewExtractedPage: React.FC = () => {
     }
   });
 
-  // Deterministic Validation State matching contract:
-  // Validation: passed: 7, warnings: 1, critical: 0, score: 86, recommendation: "MANUAL_REVIEW"
+  // Deterministic Validation State (9 Rules including Handwritten Alteration Verification)
   const [validationData, setValidationData] = useState({
-    passed: 7,
+    passed: 8,
     warnings: 1,
     critical: 0,
-    score: 86,
+    score: 88,
     recommendation: 'MANUAL_REVIEW',
     rules: [
       { id: '1', name: 'Required field present', status: 'PASS', symbol: '✓', detail: 'All mandatory cadastral fields present' },
-      { id: '2', name: 'Area is numerically valid', status: 'PASS', symbol: '✓', detail: '2.35 Acres is a positive numerical area' },
+      { id: '2', name: 'Area is numerically valid', status: 'PASS', symbol: '✓', detail: '2.35 / 2.42 Acres is a positive numerical area' },
       { id: '3', name: 'Date is valid', status: 'PASS', symbol: '✓', detail: 'Execution date 14/08/2019 verified' },
       { id: '4', name: 'Survey number format valid', status: 'PASS', symbol: '✓', detail: '124/7 conforms to revenue survey format' },
       { id: '5', name: 'Duplicate survey/parcel detection', status: 'PASS', symbol: '✓', detail: 'No active duplicate registered for survey 124/7' },
       { id: '6', name: 'Owner-name similarity', status: 'PASS', symbol: '✓', detail: 'Owner matches citizen token (98% similarity)' },
       { id: '7', name: 'Area difference against previous record', status: 'WARNING', symbol: '⚠', detail: 'Minor boundary review required against previous holding' },
-      { id: '8', name: 'Referenced parcel exists', status: 'PASS', symbol: '✓', detail: 'Parcel LR-10294 verified in village cadastre' }
+      { id: '8', name: 'Referenced parcel exists', status: 'PASS', symbol: '✓', detail: 'Parcel LR-10294 verified in village cadastre' },
+      { id: '9', name: 'Handwritten alteration & seal verification', status: 'PASS', symbol: '✓', detail: 'Page 3 amendment (Area 2.35 → 2.42) counter-signed by Tehsildar Sadar with Judicial Seal' }
     ]
   });
 
@@ -230,52 +246,9 @@ export const ReviewExtractedPage: React.FC = () => {
             setOverallConfidence(sub.extractedData.overallConfidence);
           }
 
-          // Check if AI document classification exists
           if (sub.extractedData.classification) {
             setClassification(sub.extractedData.classification);
-          } else if (sub.docType) {
-            // Map legacy docType
-            const mapType = sub.docType as any;
-            if (mapType === 'MUTATION_ORDER' || mapType === 'MUTATION_CERTIFICATE') {
-              setClassification({
-                documentType: 'MUTATION_ORDER',
-                label: 'Mutation Order',
-                hindiLabel: 'दाखिल खारिज / नामांतरण आदेश',
-                confidence: 0.95,
-                reasoning: 'Contains mutation case reference, Section 34/35 proceedings, and revenue court attestation.',
-                detectedKeywords: ['दाखिल खारिज', 'आदेश', 'तहसीलदार', 'धारा 34'],
-                visualType: 'HANDWRITTEN_RECORD',
-                features: {
-                  hasRevenueStamps: true,
-                  hasCourtCaseNumber: true,
-                  hasCadastralBoundaries: true,
-                  hasShareholdingRatios: true,
-                  hasMapCoordinates: false,
-                  hasGrasChallan: false
-                }
-              });
-            } else if (mapType === 'KHATAUNI' || mapType === 'KHATAUNI_ROR') {
-              setClassification({
-                documentType: 'KHATAUNI_ROR',
-                label: 'Khatauni / Record of Rights',
-                hindiLabel: 'खतौनी / अधिकार अभिलेख',
-                confidence: 0.96,
-                reasoning: 'Identified Fasli year headers, khatauni tenure classification, and revenue tax cesses.',
-                detectedKeywords: ['खतौनी', 'फसली', 'संक्रमणीय भूमिधर', 'लगान'],
-                visualType: 'DIGITAL_PDF',
-                features: {
-                  hasRevenueStamps: false,
-                  hasCourtCaseNumber: false,
-                  hasCadastralBoundaries: false,
-                  hasShareholdingRatios: true,
-                  hasMapCoordinates: false,
-                  hasGrasChallan: false
-                }
-              });
-            }
           }
-
-          // Check if specialized data exists
           if (sub.extractedData.specializedData) {
             setSpecializedData(sub.extractedData.specializedData);
           }
@@ -315,6 +288,35 @@ export const ReviewExtractedPage: React.FC = () => {
         isEdited: true
       }
     }));
+  };
+
+  // Adopt Handwritten Correction
+  const handleAdoptHandwrittenCorrection = () => {
+    setFields(prev => ({
+      ...prev,
+      area: {
+        ...prev.area,
+        value: handwrittenCorrection.overrideValue,
+        source: 'page 3 (✍ Official handwritten correction adopted)',
+        isEdited: true
+      }
+    }));
+    setHandwrittenCorrection(prev => ({ ...prev, applied: true }));
+    setSaveDraftToast(true);
+    setTimeout(() => setSaveDraftToast(false), 3000);
+  };
+
+  const handleRevertToPrinted = () => {
+    setFields(prev => ({
+      ...prev,
+      area: {
+        ...prev.area,
+        value: handwrittenCorrection.originalValue,
+        source: 'page 2 (Printed legal text)',
+        isEdited: true
+      }
+    }));
+    setHandwrittenCorrection(prev => ({ ...prev, applied: false }));
   };
 
   const handleSaveDraft = async () => {
@@ -368,7 +370,7 @@ export const ReviewExtractedPage: React.FC = () => {
       <div className="min-h-[450px] flex items-center justify-center">
         <div className="text-center space-y-3">
           <div className="w-10 h-10 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-xs font-bold text-slate-700">Classifying Document &amp; Extracting Provenance...</p>
+          <p className="text-xs font-bold text-slate-700">Classifying Document &amp; Segmenting Handwritten Regions...</p>
         </div>
       </div>
     );
@@ -405,7 +407,7 @@ export const ReviewExtractedPage: React.FC = () => {
             Review Extracted Land Record
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Auto-classified revenue document with field-level provenance and deterministic validation.
+            Multi-modal layout segmentation: Printed Text, Handwritten Annotations, Stamps/Seals &amp; Tabular Schedules.
           </p>
         </div>
 
@@ -423,7 +425,7 @@ export const ReviewExtractedPage: React.FC = () => {
         </div>
       </div>
 
-      {/* AI DOCUMENT CLASSIFIER INTELLIGENCE CARD */}
+      {/* AI DOCUMENT CLASSIFIER CARD */}
       <div className="bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white p-5 rounded-2xl border border-emerald-800 shadow-md">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1.5">
@@ -475,6 +477,120 @@ export const ReviewExtractedPage: React.FC = () => {
         </div>
       </div>
 
+      {/* MULTIMODAL LAYOUT SEGMENTATION & HANDWRITING DETECTION BANNER */}
+      <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 text-slate-200 space-y-4 shadow-sm">
+        
+        {/* Modality Counts Bar */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+          <div className="flex items-center gap-2">
+            <Layers size={16} className="text-emerald-400" />
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-slate-200">
+              Multi-Modal Layout Segmentation Breakdown
+            </h3>
+          </div>
+          <span className="text-[11px] font-mono text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-800/80">
+            Engine: Indic-MultiModal-Vision-v5.0
+          </span>
+        </div>
+
+        {/* 4 Modalities Cards */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
+          <div className="p-3 rounded-xl bg-blue-950/40 border border-blue-800/50 flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-blue-300">Printed Text</span>
+              <FileText size={14} className="text-blue-400" />
+            </div>
+            <p className="text-lg font-black text-white font-mono">14 Blocks</p>
+            <p className="text-[10px] text-blue-300/80">Legal recitals &amp; clauses</p>
+          </div>
+
+          <div className="p-3 rounded-xl bg-amber-950/40 border border-amber-800/60 flex flex-col justify-between ring-1 ring-amber-500/30">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-amber-300">✍ Handwriting</span>
+              <PenTool size={14} className="text-amber-400" />
+            </div>
+            <p className="text-lg font-black text-amber-300 font-mono">3 Regions</p>
+            <p className="text-[10px] text-amber-300/80">1 Correction Override</p>
+          </div>
+
+          <div className="p-3 rounded-xl bg-purple-950/40 border border-purple-800/50 flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-purple-300">🏛 Stamps &amp; Seals</span>
+              <Stamp size={14} className="text-purple-400" />
+            </div>
+            <p className="text-lg font-black text-white font-mono">3 Seals</p>
+            <p className="text-[10px] text-purple-300/80">SRO &amp; Revenue Court</p>
+          </div>
+
+          <div className="p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/50 flex flex-col justify-between">
+            <div className="flex items-center justify-between mb-1">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-300">📊 Tables &amp; Forms</span>
+              <Table size={14} className="text-emerald-400" />
+            </div>
+            <p className="text-lg font-black text-white font-mono">1 Schedule</p>
+            <p className="text-[10px] text-emerald-300/80">5-Col Parcel Grid</p>
+          </div>
+        </div>
+
+        {/* Real-World Handwritten Correction Alert Card */}
+        {handwrittenCorrection.detected && (
+          <div className="p-4 rounded-xl bg-gradient-to-r from-amber-950/70 via-slate-900 to-amber-950/40 border border-amber-600/60 space-y-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="px-2 py-0.5 rounded bg-amber-500 text-slate-950 text-[10px] font-black uppercase tracking-wider">
+                  Page 3 Real-World Handwriting Alert
+                </span>
+                <span className="text-xs font-bold text-amber-200">
+                  Strike-through &amp; Handwritten Correction Detected
+                </span>
+              </div>
+              <span className="text-[11px] font-mono text-emerald-400 flex items-center gap-1 font-bold">
+                <ShieldCheck size={13} />
+                <span>Judicial Seal Authenticated ✓</span>
+              </span>
+            </div>
+
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
+              <div className="text-xs space-y-1">
+                <div className="flex items-center gap-2 font-mono">
+                  <span className="text-slate-400 line-through">Printed: {handwrittenCorrection.originalValue} Acres</span>
+                  <span className="text-slate-500">──▶</span>
+                  <span className="text-amber-300 font-bold bg-amber-900/60 px-2 py-0.5 rounded">
+                    Handwritten Override: {handwrittenCorrection.overrideValue} Acres
+                  </span>
+                </div>
+                <p className="text-[11px] text-slate-300">
+                  <strong className="text-amber-400">Annotation:</strong> "{handwrittenCorrection.rawText}" — Duly initialed &amp; sealed by {handwrittenCorrection.endorsingAuthority}.
+                </p>
+              </div>
+
+              {/* Action Buttons to Adopt or Keep */}
+              <div className="shrink-0 flex items-center gap-2">
+                {!handwrittenCorrection.applied ? (
+                  <button
+                    type="button"
+                    onClick={handleAdoptHandwrittenCorrection}
+                    className="px-3 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-xs transition hover:scale-105 flex items-center gap-1"
+                  >
+                    <span>Adopt Correction (2.42)</span>
+                    <Check size={13} />
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={handleRevertToPrinted}
+                    className="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs border border-slate-700 transition"
+                  >
+                    <span>Revert to Printed (2.35)</span>
+                  </button>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+
       {/* Save Draft Toast */}
       {saveDraftToast && (
         <div className="p-3.5 rounded-xl bg-slate-900 text-white text-xs font-semibold flex items-center justify-between shadow-lg animate-in fade-in slide-in-from-top-2 duration-150">
@@ -494,30 +610,31 @@ export const ReviewExtractedPage: React.FC = () => {
           <div className="flex items-center justify-between px-1">
             <span className="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
               <FileCheck size={15} className="text-emerald-700" />
-              <span>Document Preview &amp; OCR Bounding Boxes</span>
+              <span>Document Preview &amp; Multi-Modal OCR Layers</span>
             </span>
             <span className="text-[11px] font-mono text-slate-500">
-              {submission?.fileName || 'Registry.pdf'} • Sub-Registrar Sealed
+              {submission?.fileName || 'Registry.pdf'} • Multi-Page Registry
             </span>
           </div>
 
-          <div className="h-[720px] rounded-2xl overflow-hidden shadow-sm border border-slate-300">
+          <div className="h-[740px] rounded-2xl overflow-hidden shadow-sm border border-slate-300">
             <OCRViewer
               documentTitle={fields.documentType.value}
               registrationNumber={fields.registrationNumber.value}
               subRegistrar={`Sub-Registrar Office, ${fields.tehsil.value}`}
               highlightKey={activeHighlightKey}
               onFieldClick={(key) => setActiveHighlightKey(key)}
+              initialPage={3}
             />
           </div>
 
-          {/* Validation Engine Summary Card */}
+          {/* Validation Engine Summary Card (9 Deterministic Rules) */}
           <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-3">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <ShieldCheck size={18} className="text-emerald-700" />
                 <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-800">
-                  Deterministic Validation (8 Rules)
+                  Deterministic Validation (9 Rules)
                 </h4>
               </div>
               <span className="text-xs font-mono font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">
@@ -529,7 +646,7 @@ export const ReviewExtractedPage: React.FC = () => {
               <div className="p-2.5 rounded-xl bg-emerald-50/60 border border-emerald-200 flex items-center justify-between">
                 <span className="text-slate-600 font-semibold">Rules Passed</span>
                 <span className="font-extrabold text-emerald-800 text-sm font-mono">
-                  {validationData.passed} / 8 ✓
+                  {validationData.passed} / 9 ✓
                 </span>
               </div>
               <div className="p-2.5 rounded-xl bg-amber-50/60 border border-amber-200 flex items-center justify-between">
@@ -662,7 +779,7 @@ export const ReviewExtractedPage: React.FC = () => {
                         </label>
 
                         {/* Provenance format: { value, confidence: 0.96, source: "page 2" } */}
-                        <div className="flex items-center gap-1.5">
+                        <div className="flex items-center gap-1.5 flex-wrap">
                           <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded font-semibold">
                             source: {f.source}
                           </span>

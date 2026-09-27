@@ -208,6 +208,7 @@ async function processDocumentUpload(req: Request, res: Response) {
       extractedData,
       classification: extractedData.classification,
       specializedData: extractedData.specializedData,
+      layoutAnalysis: extractedData.layoutAnalysis,
       validation: validationResult,
       validationResult,
       fileUrl: storageResult.publicUrl,

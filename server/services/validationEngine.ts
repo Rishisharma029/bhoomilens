@@ -428,6 +428,49 @@ export const validationEngine = {
     });
 
     // ==========================================================
+    // Rule 9: ✍ Handwritten alteration & seal verification
+    // ==========================================================
+    // Analyzes handwritten modifications (e.g. "Area = 2.35 -> 2.42")
+    // and determines if counter-signed with an official revenue seal
+    const layout = (extracted as any)?.layoutAnalysis;
+    const hwCorrections = layout?.handwrittenAnnotations?.filter((a: any) => a.intent === 'CORRECTION_OVERRIDE') || [];
+    const hasHwCorrection = hwCorrections.length > 0;
+
+    let rule9Status: RuleStatus = 'PASS';
+    let rule9Detail = 'No unauthorized handwritten alterations detected. Printed legal text is verified.';
+    let rule9Score = 100;
+
+    if (hasHwCorrection) {
+      const corr = hwCorrections[0];
+      if (corr.isCounterSigned && corr.riskAssessment === 'VERIFIED_OFFICIAL_AMENDMENT') {
+        rule9Status = 'PASS';
+        rule9Score = 95;
+        rule9Detail = `Handwritten amendment verified (${corr.rawText}): Counter-signed by ${corr.endorsingAuthority || 'Tehsildar Sadar'} with authentic judicial seal.`;
+      } else if (corr.riskAssessment === 'SUSPICIOUS_UNENDORSED_ALTERATION') {
+        rule9Status = 'CRITICAL';
+        rule9Score = 15;
+        rule9Detail = `Suspicious unendorsed handwritten alteration detected (${corr.rawText}). Lacks authorized officer counter-signature. High fraud risk!`;
+      } else {
+        rule9Status = 'WARNING';
+        rule9Score = 75;
+        rule9Detail = `Handwritten modification detected (${corr.rawText}). Officer review recommended.`;
+      }
+    }
+
+    rules.push({
+      id: 'rule_handwritten_alteration',
+      name: 'Handwritten alteration & seal verification',
+      category: 'REGISTRY',
+      status: rule9Status,
+      symbol: rule9Status === 'PASS' ? '✓' : rule9Status === 'WARNING' ? '⚠' : '✕',
+      score: rule9Score,
+      detail: rule9Detail,
+      extractedValue: hasHwCorrection ? hwCorrections[0].rawText : 'No alterations',
+      expectedValue: 'Duly counter-signed & sealed',
+      color: rule9Status === 'PASS' ? 'text-emerald-700 bg-emerald-50 border-emerald-200' : 'text-amber-800 bg-amber-50 border-amber-300'
+    });
+
+    // ==========================================================
     // Aggregate Summary Calculation (Matching user specification)
     // ==========================================================
     const passedCount = rules.filter(r => r.status === 'PASS').length;
