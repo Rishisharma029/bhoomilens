@@ -273,7 +273,8 @@ const getVerificationQueueHandler = async (req: Request, res: Response) => {
         const rawKhasra = s.khasraNo || s.khasra_no || s.surveyNo || s.survey_no || '124/7';
         const numPart = rawKhasra.replace(/[^0-9]/g, '') || '10294';
         const recId = s.parcelId || s.parcel_id || `LR-${numPart}`;
-        const score = s.extractedData?.overallConfidence || s.extracted_data?.overall_confidence || 88;
+        const classification = s.extractedData?.classification || s.extracted_data?.classification;
+        const categoryLabel = classification?.label || s.docType || s.doc_type || 'Sale Deed';
 
         return {
           recordId: recId,
@@ -284,7 +285,9 @@ const getVerificationQueueHandler = async (req: Request, res: Response) => {
           status: score >= 95 ? 'Auto-Verified' : score < 75 ? 'High Risk' : 'Review',
           rawRecordId: s.id,
           location: `${s.village || 'ABC'}, ${s.district || 'XYZ'}`,
-          docType: s.fileName || s.file_name || 'Registry.pdf'
+          docType: s.fileName || s.file_name || 'Registry.pdf',
+          categoryLabel,
+          classification
         };
       });
 

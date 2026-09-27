@@ -98,6 +98,41 @@ export interface LandRecord {
   validationSummary?: ValidationSummary;
 }
 
+export type DocumentTypeCategory =
+  | 'SALE_DEED'
+  | 'MUTATION_ORDER'
+  | 'KHATAUNI_ROR'
+  | 'EXTRACT_7_12'
+  | 'CADASTRAL_MAP'
+  | 'REGISTRATION_CERTIFICATE'
+  | 'UNKNOWN_MIXED';
+
+export type VisualDocumentType =
+  | 'SCANNED_LEGACY_PDF'
+  | 'HANDWRITTEN_RECORD'
+  | 'CADASTRAL_MAP'
+  | 'DIGITAL_PDF';
+
+export interface DocumentClassificationResult {
+  documentType: DocumentTypeCategory;
+  label: string;
+  hindiLabel: string;
+  confidence: number; // 0.0 to 1.0
+  reasoning: string;
+  detectedKeywords: string[];
+  visualType: VisualDocumentType;
+  secondaryType?: DocumentTypeCategory;
+  secondaryConfidence?: number;
+  features: {
+    hasRevenueStamps: boolean;
+    hasCourtCaseNumber: boolean;
+    hasCadastralBoundaries: boolean;
+    hasShareholdingRatios: boolean;
+    hasMapCoordinates: boolean;
+    hasGrasChallan: boolean;
+  };
+}
+
 export interface ExtractedField {
   label: string;
   key: string;
@@ -112,6 +147,8 @@ export interface ExtractedField {
 export interface ExtractedData {
   documentTitle: string;
   documentType: string;
+  classification?: DocumentClassificationResult;
+  specializedData?: Record<string, any>;
   registrationNumber: string;
   registrationDate: string;
   subRegistrarOffice: string;
@@ -155,7 +192,7 @@ export interface DocumentSubmission {
   surveyNo?: string;
   village: string;
   district: string;
-  docType: 'SALE_DEED' | 'KHATAUNI' | 'MUTATION_CERTIFICATE' | 'GIFT_DEED' | 'PARTITION_DEED';
+  docType: DocumentTypeCategory | string;
   fileName: string;
   fileSize: string;
   fileUrl: string;

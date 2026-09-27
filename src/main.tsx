@@ -8,3 +8,4 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <App />
   </React.StrictMode>,
 );
+// MAIN FILES WHICH CONTAIN ALL THE IMPORTS

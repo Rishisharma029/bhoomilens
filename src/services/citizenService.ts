@@ -77,7 +77,7 @@ export const citizenService = {
             surveyNo: data.landRecord?.surveyNo || payload.khasraNo,
             village: payload.village,
             district: payload.district,
-            docType: payload.docType,
+            docType: data.classification?.documentType || data.document?.doc_type || payload.docType,
             fileName: payload.fileName,
             fileSize: payload.fileSize,
             fileUrl: data.fileUrl || '/mock/deed_10294.pdf',

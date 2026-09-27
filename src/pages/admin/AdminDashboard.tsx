@@ -165,7 +165,7 @@ export const AdminDashboard: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8 max-w-7xl mx-auto">
+    <div className="space-y-8 w-full">
       
       {/* Top Officer Command Header */}
       <div className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 border border-slate-800 shadow-xl relative overflow-hidden">

@@ -40,9 +40,9 @@ export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200">
       {/* Top tricolor ribbon accent */}
-      <div className="h-1 w-full bg-linear-to-r from-amber-600 via-white to-emerald-600"></div>
+      <div className="h-1 w-full bg-gradient-to-r from-amber-600 via-white to-emerald-600"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Brand & Emblem */}
           <Link to="/" className="flex items-center gap-3 group">

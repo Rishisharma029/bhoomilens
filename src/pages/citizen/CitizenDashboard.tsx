@@ -26,31 +26,31 @@ export const CitizenDashboard: React.FC = () => {
   const pendingCount = submissions.filter(s => s.status === 'PENDING_AI' || s.status === 'FLAGGED_DISCREPANCY').length;
 
   return (
-    <div className="space-y-6">
+    <div className="w-full space-y-6">
       {/* Welcome Banner */}
-      <div className="bg-linear-to-r from-emerald-800 to-teal-900 rounded-2xl p-6 text-white shadow-lg relative overflow-hidden">
-        <div className="absolute -right-8 -bottom-8 w-56 h-56 bg-white/5 rounded-full blur-xl pointer-events-none" />
+      <div className="bg-gradient-to-r from-emerald-950 via-emerald-800 to-teal-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden w-full border border-emerald-700/50">
+        <div className="absolute -right-8 -bottom-8 w-72 h-72 bg-emerald-400/10 rounded-full blur-2xl pointer-events-none" />
         
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-700/60 border border-emerald-500/30 text-emerald-200 text-xs font-semibold mb-2">
-              <ShieldCheck size={13} />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-800/80 border border-emerald-400/40 text-emerald-200 text-xs font-bold mb-2.5">
+              <ShieldCheck size={14} className="text-emerald-300" />
               <span>Aadhaar Authenticated: {user?.aadhaarMasked || 'XXXX-XXXX-8492'}</span>
             </div>
-            <h2 className="text-2xl font-extrabold tracking-tight">
-              Namaste, {user?.name || 'Ramesh Chandra Joshi'}
+            <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-white drop-shadow-xs">
+              Namaste, {user?.name || 'Sunita Devi Chauhan'}
             </h2>
-            <p className="text-xs text-emerald-100/90 mt-1 max-w-xl">
+            <p className="text-xs sm:text-sm text-emerald-100 mt-1.5 max-w-3xl leading-relaxed font-normal">
               Welcome to your personal Dev Bhoomi Digital Land Vault. Review registered parcels, track pending AI deed verifications, and access digitally sealed Records of Rights (ROR).
             </p>
           </div>
 
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3 shrink-0">
             <Link
               to="/citizen/upload"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow-md transition hover:scale-[1.02]"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-lg transition hover:scale-[1.02]"
             >
-              <UploadCloud size={16} />
+              <UploadCloud size={17} />
               <span>Upload Land Document</span>
             </Link>
           </div>

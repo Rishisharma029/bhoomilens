@@ -63,3 +63,4 @@ export class LocalDiskFileStorage implements IFileStorage {
 
 // Default export singleton instance
 export const fileStorage: IFileStorage = new LocalDiskFileStorage();
+// FILE STORAGE SYSTEM FOR PRODUCTION.

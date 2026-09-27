@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { citizenService } from '../../services/citizenService';
 import { useRecords } from '../../context/RecordsContext';
-import { DocumentSubmission } from '../../types';
+import { DocumentSubmission, DocumentClassificationResult } from '../../types';
 import { OCRViewer } from '../../components/common/OCRViewer';
 import { Modal } from '../../components/common/Modal';
 import { 
@@ -22,7 +22,12 @@ import {
   Building,
   MapPin,
   FileText,
-  UserCheck
+  UserCheck,
+  Brain,
+  Scale,
+  BookOpen,
+  Zap,
+  Award
 } from 'lucide-react';
 
 interface ExtractedFieldState {
@@ -42,11 +47,40 @@ export const ReviewExtractedPage: React.FC = () => {
   const [submission, setSubmission] = useState<DocumentSubmission | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeHighlightKey, setActiveHighlightKey] = useState<string>('ownerName');
-  const [activeTab, setActiveTab] = useState<'ownership' | 'cadastre' | 'location' | 'registration'>('cadastre');
+  const [activeTab, setActiveTab] = useState<'cadastre' | 'ownership' | 'location' | 'registration' | 'specialized'>('cadastre');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [saveDraftToast, setSaveDraftToast] = useState(false);
   const [submitSuccessModal, setSubmitSuccessModal] = useState(false);
   const [overallConfidence, setOverallConfidence] = useState(96);
+
+  // AI Document Classifier Result
+  const [classification, setClassification] = useState<DocumentClassificationResult>({
+    documentType: 'SALE_DEED',
+    label: 'Sale Deed',
+    hindiLabel: 'बैनामा / विक्रय विलेख',
+    confidence: 0.98,
+    reasoning: 'Statutory transfer covenants detected (विक्रय विलेख, मुबलिग), consideration valuation, and SRO stamp duty registry receipt.',
+    detectedKeywords: ['विक्रय विलेख', 'बैनामा', 'प्रतिफल', 'मुबलिग', 'स्टाम्प शुल्क', 'क्रेता'],
+    visualType: 'SCANNED_LEGACY_PDF',
+    features: {
+      hasRevenueStamps: true,
+      hasCourtCaseNumber: false,
+      hasCadastralBoundaries: true,
+      hasShareholdingRatios: false,
+      hasMapCoordinates: false,
+      hasGrasChallan: true
+    }
+  });
+
+  // Specialized Extracted Data based on Document Type
+  const [specializedData, setSpecializedData] = useState<Record<string, any>>({
+    vendorName: 'Ram Gopal Sharma',
+    purchaserName: 'Rishi Sharma',
+    considerationAmount: '₹42,50,000',
+    stampDutyPaid: '₹2,97,500 (7%)',
+    possessionHandedOver: 'Absolute Vacant Possession Delivered',
+    encumbranceStatus: 'Free of all liens & mortgages'
+  });
 
   // 16 Structured Land Fields with value, confidence, and page provenance
   const [fields, setFields] = useState<Record<string, ExtractedFieldState>>({
@@ -196,6 +230,56 @@ export const ReviewExtractedPage: React.FC = () => {
             setOverallConfidence(sub.extractedData.overallConfidence);
           }
 
+          // Check if AI document classification exists
+          if (sub.extractedData.classification) {
+            setClassification(sub.extractedData.classification);
+          } else if (sub.docType) {
+            // Map legacy docType
+            const mapType = sub.docType as any;
+            if (mapType === 'MUTATION_ORDER' || mapType === 'MUTATION_CERTIFICATE') {
+              setClassification({
+                documentType: 'MUTATION_ORDER',
+                label: 'Mutation Order',
+                hindiLabel: 'दाखिल खारिज / नामांतरण आदेश',
+                confidence: 0.95,
+                reasoning: 'Contains mutation case reference, Section 34/35 proceedings, and revenue court attestation.',
+                detectedKeywords: ['दाखिल खारिज', 'आदेश', 'तहसीलदार', 'धारा 34'],
+                visualType: 'HANDWRITTEN_RECORD',
+                features: {
+                  hasRevenueStamps: true,
+                  hasCourtCaseNumber: true,
+                  hasCadastralBoundaries: true,
+                  hasShareholdingRatios: true,
+                  hasMapCoordinates: false,
+                  hasGrasChallan: false
+                }
+              });
+            } else if (mapType === 'KHATAUNI' || mapType === 'KHATAUNI_ROR') {
+              setClassification({
+                documentType: 'KHATAUNI_ROR',
+                label: 'Khatauni / Record of Rights',
+                hindiLabel: 'खतौनी / अधिकार अभिलेख',
+                confidence: 0.96,
+                reasoning: 'Identified Fasli year headers, khatauni tenure classification, and revenue tax cesses.',
+                detectedKeywords: ['खतौनी', 'फसली', 'संक्रमणीय भूमिधर', 'लगान'],
+                visualType: 'DIGITAL_PDF',
+                features: {
+                  hasRevenueStamps: false,
+                  hasCourtCaseNumber: false,
+                  hasCadastralBoundaries: false,
+                  hasShareholdingRatios: true,
+                  hasMapCoordinates: false,
+                  hasGrasChallan: false
+                }
+              });
+            }
+          }
+
+          // Check if specialized data exists
+          if (sub.extractedData.specializedData) {
+            setSpecializedData(sub.extractedData.specializedData);
+          }
+
           setFields(prev => {
             const updated = { ...prev };
             Object.keys(updated).forEach(k => {
@@ -284,13 +368,13 @@ export const ReviewExtractedPage: React.FC = () => {
       <div className="min-h-[450px] flex items-center justify-center">
         <div className="text-center space-y-3">
           <div className="w-10 h-10 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin mx-auto" />
-          <p className="text-xs font-bold text-slate-700">Extracting 16 Land Fields &amp; Provenance via OCR...</p>
+          <p className="text-xs font-bold text-slate-700">Classifying Document &amp; Extracting Provenance...</p>
         </div>
       </div>
     );
   }
 
-  // Group fields into the 4 functional categories
+  // Group fields into the functional categories
   const categories = {
     ownership: ['ownerName', 'fatherName', 'previousOwner', 'transactionType'],
     cadastre: ['surveyNo', 'khataNo', 'area', 'unit', 'boundaries'],
@@ -299,7 +383,7 @@ export const ReviewExtractedPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
+    <div className="w-full space-y-6">
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
@@ -317,11 +401,11 @@ export const ReviewExtractedPage: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight">
-            Review Extracted Land Data
+          <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            Review Extracted Land Record
           </h1>
-          <p className="text-xs text-slate-500 mt-0.5">
-            Verify every extracted field against the deed preview. Every field displays its exact page source and trust score before submission.
+          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
+            Auto-classified revenue document with field-level provenance and deterministic validation.
           </p>
         </div>
 
@@ -339,6 +423,58 @@ export const ReviewExtractedPage: React.FC = () => {
         </div>
       </div>
 
+      {/* AI DOCUMENT CLASSIFIER INTELLIGENCE CARD */}
+      <div className="bg-gradient-to-r from-emerald-950 via-teal-900 to-slate-900 text-white p-5 rounded-2xl border border-emerald-800 shadow-md">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] font-black uppercase tracking-wider border border-emerald-400/30 flex items-center gap-1">
+                <Brain size={12} />
+                <span>AI Document Classifier</span>
+              </span>
+              <span className="text-xs font-mono text-emerald-300">
+                Visual Type: <strong>{classification.visualType.replace(/_/g, ' ')}</strong>
+              </span>
+            </div>
+
+            <div className="flex items-baseline gap-3 flex-wrap">
+              <h2 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+                {classification.label}
+              </h2>
+              <span className="text-emerald-300 text-sm font-semibold">
+                ({classification.hindiLabel})
+              </span>
+              <span className="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/30 text-emerald-200 border border-emerald-400/40 font-bold">
+                {Math.round(classification.confidence * 100)}% Match
+              </span>
+            </div>
+
+            <p className="text-xs text-slate-300 max-w-3xl leading-relaxed">
+              <strong className="text-emerald-300 font-bold">AI Rationale:</strong> {classification.reasoning}
+            </p>
+          </div>
+
+          <div className="shrink-0 flex md:flex-col items-end justify-between gap-2 border-t md:border-t-0 md:border-l border-emerald-800/80 pt-3 md:pt-0 md:pl-5">
+            <div className="text-left md:text-right">
+              <span className="text-[10px] text-emerald-400 font-mono uppercase tracking-wider block">Specialized Pipeline</span>
+              <span className="text-xs font-extrabold text-white flex items-center gap-1">
+                <Zap size={13} className="text-amber-400" />
+                <span>Active &amp; Dispatched</span>
+              </span>
+            </div>
+            {classification.detectedKeywords && (
+              <div className="flex flex-wrap gap-1 max-w-xs justify-end">
+                {classification.detectedKeywords.slice(0, 4).map((kw, i) => (
+                  <span key={i} className="text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-emerald-200 font-mono">
+                    #{kw}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
       {/* Save Draft Toast */}
       {saveDraftToast && (
         <div className="p-3.5 rounded-xl bg-slate-900 text-white text-xs font-semibold flex items-center justify-between shadow-lg animate-in fade-in slide-in-from-top-2 duration-150">
@@ -350,10 +486,7 @@ export const ReviewExtractedPage: React.FC = () => {
         </div>
       )}
 
-      {/* 2-Column Split View:
-          LEFT: Document Preview (OCRViewer)
-          RIGHT: 16 Structured Extracted Fields + Provenance + Validation Rules
-      */}
+      {/* 2-Column Split View */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
         {/* LEFT: Document Preview */}
@@ -361,10 +494,10 @@ export const ReviewExtractedPage: React.FC = () => {
           <div className="flex items-center justify-between px-1">
             <span className="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
               <FileCheck size={15} className="text-emerald-700" />
-              <span>Original Document Preview</span>
+              <span>Document Preview &amp; OCR Bounding Boxes</span>
             </span>
-            <span className="text-[11px] font-mono text-slate-400">
-              Registry.pdf • Sub-Registrar Sealed
+            <span className="text-[11px] font-mono text-slate-500">
+              {submission?.fileName || 'Registry.pdf'} • Sub-Registrar Sealed
             </span>
           </div>
 
@@ -445,8 +578,8 @@ export const ReviewExtractedPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Category Switcher Tabs */}
-            <div className="grid grid-cols-4 gap-1 p-1 bg-slate-100 rounded-xl text-xs font-bold">
+            {/* Category Switcher Tabs (Cadastre, Parties, Location, Registry, Specialized) */}
+            <div className="grid grid-cols-5 gap-1 p-1 bg-slate-100 rounded-xl text-xs font-bold">
               <button
                 type="button"
                 onClick={() => setActiveTab('cadastre')}
@@ -490,81 +623,126 @@ export const ReviewExtractedPage: React.FC = () => {
                 <FileText size={13} />
                 <span className="hidden sm:inline">Registry</span>
               </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('specialized')}
+                className={`py-2 rounded-lg transition flex items-center justify-center gap-1 ${
+                  activeTab === 'specialized' ? 'bg-emerald-800 text-white shadow-xs' : 'text-emerald-800 hover:text-emerald-950'
+                }`}
+              >
+                <Award size={13} />
+                <span className="hidden sm:inline">Specialized</span>
+              </button>
             </div>
 
             {/* Field Inputs for Active Tab */}
-            <div className="space-y-3.5">
-              {categories[activeTab].map((key) => {
-                const f = fields[key];
-                if (!f) return null;
-                const isSelected = activeHighlightKey === key;
-                const pct = Math.round(f.confidence * 100);
+            {activeTab !== 'specialized' ? (
+              <div className="space-y-3.5">
+                {categories[activeTab].map((key) => {
+                  const f = fields[key];
+                  if (!f) return null;
+                  const isSelected = activeHighlightKey === key;
+                  const pct = Math.round(f.confidence * 100);
 
-                return (
-                  <div
-                    key={key}
-                    onClick={() => setActiveHighlightKey(key)}
-                    className={`p-3.5 rounded-xl border transition-all cursor-pointer ${
-                      isSelected
-                        ? 'border-emerald-500 bg-emerald-50/30 ring-2 ring-emerald-500/20 shadow-xs'
-                        : 'border-slate-200 hover:border-slate-300 bg-white'
-                    }`}
-                  >
-                    {/* Header with Field Label and Provenance Source Badge */}
-                    <div className="flex items-center justify-between mb-1.5">
-                      <label className="text-xs font-extrabold text-slate-700 tracking-wide">
-                        {f.label}
-                      </label>
+                  return (
+                    <div
+                      key={key}
+                      onClick={() => setActiveHighlightKey(key)}
+                      className={`p-3.5 rounded-xl border transition-all cursor-pointer ${
+                        isSelected
+                          ? 'border-emerald-500 bg-emerald-50/30 ring-2 ring-emerald-500/20 shadow-xs'
+                          : 'border-slate-200 hover:border-slate-300 bg-white'
+                      }`}
+                    >
+                      {/* Header with Field Label and Provenance Source Badge */}
+                      <div className="flex items-center justify-between mb-1.5">
+                        <label className="text-xs font-extrabold text-slate-700 tracking-wide">
+                          {f.label}
+                        </label>
 
-                      {/* User specified provenance format: { value, confidence: 0.96, source: "page 2" } */}
-                      <div className="flex items-center gap-1.5">
-                        <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded font-semibold">
-                          source: {f.source}
-                        </span>
-                        <span
-                          className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${
-                            pct >= 95
-                              ? 'text-emerald-800 bg-emerald-100'
-                              : pct >= 85
-                              ? 'text-amber-800 bg-amber-100'
-                              : 'text-rose-800 bg-rose-100'
-                          }`}
-                        >
-                          {pct}% trust
-                        </span>
-                        {f.isEdited && (
-                          <span className="text-[10px] font-bold text-purple-700 bg-purple-100 px-1.5 py-0.5 rounded">
-                            edited
+                        {/* Provenance format: { value, confidence: 0.96, source: "page 2" } */}
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-[10px] font-mono text-slate-600 bg-slate-100 px-2 py-0.5 rounded font-semibold">
+                            source: {f.source}
                           </span>
-                        )}
+                          <span
+                            className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${
+                              pct >= 95
+                                ? 'text-emerald-800 bg-emerald-100'
+                                : pct >= 85
+                                ? 'text-amber-800 bg-amber-100'
+                                : 'text-rose-800 bg-rose-100'
+                            }`}
+                          >
+                            {pct}% trust
+                          </span>
+                          {f.isEdited && (
+                            <span className="text-[10px] font-bold text-purple-700 bg-purple-100 px-1.5 py-0.5 rounded">
+                              edited
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Input or Textarea */}
+                      {key === 'boundaries' ? (
+                        <textarea
+                          rows={2}
+                          value={f.value}
+                          onChange={(e) => handleFieldChange(key, e.target.value)}
+                          className="w-full text-xs font-semibold text-slate-900 p-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white leading-relaxed"
+                        />
+                      ) : (
+                        <input
+                          type="text"
+                          value={f.value}
+                          onChange={(e) => handleFieldChange(key, e.target.value)}
+                          className="w-full text-sm font-bold text-slate-900 px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white font-mono"
+                        />
+                      )}
+
+                      <div className="flex items-center justify-between text-[10px] text-slate-400 mt-1">
+                        <span>Trust rationale: Extracted from {f.source} via VisionOCR</span>
+                        <span>Click to highlight</span>
                       </div>
                     </div>
-
-                    {/* Input or Textarea */}
-                    {key === 'boundaries' ? (
-                      <textarea
-                        rows={2}
-                        value={f.value}
-                        onChange={(e) => handleFieldChange(key, e.target.value)}
-                        className="w-full text-xs font-semibold text-slate-900 p-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white leading-relaxed"
-                      />
-                    ) : (
-                      <input
-                        type="text"
-                        value={f.value}
-                        onChange={(e) => handleFieldChange(key, e.target.value)}
-                        className="w-full text-sm font-bold text-slate-900 px-3 py-2 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-600 bg-white font-mono"
-                      />
-                    )}
-
-                    <div className="flex items-center justify-between text-[10px] text-slate-400 mt-1">
-                      <span>Trust rationale: Extracted from {f.source} via VisionOCR</span>
-                      <span>Click to highlight</span>
-                    </div>
+                  );
+                })}
+              </div>
+            ) : (
+              /* SPECIALIZED EXTRACTION TAB: Domain-specific extracted parameters */
+              <div className="space-y-4">
+                <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
+                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-900">
+                    <Sparkles size={14} className="text-emerald-700" />
+                    <span>Specialized Pipeline Extracted Parameters ({classification.label})</span>
                   </div>
-                );
-              })}
-            </div>
+                  <p className="text-[11px] text-emerald-800 mt-0.5">
+                    Extracted automatically by the domain parser routed for this document type:
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {Object.entries(specializedData).map(([key, val]) => {
+                    const formattedKey = key
+                      .replace(/([A-Z])/g, ' $1')
+                      .replace(/^./, str => str.toUpperCase());
+
+                    return (
+                      <div key={key} className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                        <span className="text-[10px] font-bold uppercase text-slate-500 tracking-wider">
+                          {formattedKey}
+                        </span>
+                        <p className="text-xs font-extrabold text-slate-900 font-mono">
+                          {typeof val === 'boolean' ? (val ? 'Yes / Verified ✓' : 'No / None') : String(val)}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Bottom Actions: Save Draft | Submit for Verification */}
             <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
@@ -619,7 +797,7 @@ export const ReviewExtractedPage: React.FC = () => {
               Document Successfully Queued!
             </h4>
             <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">
-              Your deed for Survey No. <strong className="text-slate-800">{fields.surveyNo.value}</strong> ({fields.ownerName.value}) has been submitted to the Sub-Divisional Magistrate (SDM) verification queue.
+              Your classified <strong className="text-emerald-800">{classification.label}</strong> for Survey No. <strong className="text-slate-800">{fields.surveyNo.value}</strong> ({fields.ownerName.value}) has been submitted to the Sub-Divisional Magistrate (SDM) verification queue.
             </p>
           </div>
 

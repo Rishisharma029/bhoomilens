@@ -58,12 +58,22 @@ async function processDocumentUpload(req: Request, res: Response) {
     console.log(`[BhoomiLens Pipeline] 3. OCR Engine (${ocrResult.engine}) completed with ${ocrResult.confidence}% confidence across ${ocrResult.pageCount} page(s).`);
 
     // Step C: Run Land Record Field Extraction across all 16 specified fields
+    // AI Document Classifier detects document type (Sale Deed, Mutation Order, Khatauni, 7/12, Cadastral Map, etc.)
+    // and automatically routes into specialized extraction pipelines
     const extractedData = extractionService.extractLandFields(
       ocrResult.rawText,
       ocrResult.engine,
       ocrResult.confidence,
-      ocrResult.pages
+      ocrResult.pages,
+      originalName,
+      mimeType
     );
+
+    // AI Classification auto-detects document type; citizen manual override is respected if provided
+    const detectedDocType = extractedData.classification?.documentType || 'SALE_DEED';
+    const finalDocType = (req.body.docType && req.body.docType !== 'AUTO_DETECT' && req.body.docType !== 'UNKNOWN')
+      ? req.body.docType
+      : detectedDocType;
 
     const surveyNo = req.body.surveyNo || extractedData.fields.surveyNo.value || '124/7';
     const rawArea = req.body.area || extractedData.fields.area.value || '2.35';
@@ -84,7 +94,7 @@ async function processDocumentUpload(req: Request, res: Response) {
     const existingRec = allRecords.find(r => r.parcelId === parcelId || r.surveyNo === surveyNo);
     const validationResult = validationEngine.validateRecord(extractedData, existingRec, allRecords);
 
-    console.log(`[BhoomiLens Pipeline] 4. Validation Engine evaluated record. Score: ${validationResult.score}, Passed: ${validationResult.passed}, Warnings: ${validationResult.warnings}, Critical: ${validationResult.critical}, Recommendation: ${validationResult.recommendation}`);
+    console.log(`[BhoomiLens Pipeline] 4. Classified as "${extractedData.classification?.label}" (${Math.round((extractedData.classification?.confidence || 0) * 100)}% conf). Validation Engine evaluated record: Score ${validationResult.score}, Recommendation ${validationResult.recommendation}`);
 
     // Step E: Persist structured document into documents table
     const submissionId = `doc_sub_${Date.now()}`;
@@ -97,7 +107,7 @@ async function processDocumentUpload(req: Request, res: Response) {
       survey_no: surveyNo,
       village,
       district,
-      doc_type: docType,
+      doc_type: finalDocType,
       file_name: originalName,
       file_size: `${(fileBuffer.length / (1024 * 1024)).toFixed(1)} MB`,
       mime_type: mimeType,
@@ -196,6 +206,8 @@ async function processDocumentUpload(req: Request, res: Response) {
       document: docRow,
       landRecord: newLandRecord,
       extractedData,
+      classification: extractedData.classification,
+      specializedData: extractedData.specializedData,
       validation: validationResult,
       validationResult,
       fileUrl: storageResult.publicUrl,
