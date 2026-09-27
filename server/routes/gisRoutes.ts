@@ -7,9 +7,11 @@ const router = Router();
  * 1. GET /api/gis/parcels/:khasraNo
  * Lookup a parcel's official GIS polygon and boundary metadata
  */
-router.get('/parcels/:khasraNo', (req: Request, res: Response) => {
+router.get(['/parcels/:khasraNo', '/parcels/:part1/:part2'], (req: Request, res: Response) => {
   try {
-    const { khasraNo } = req.params;
+    const khasraNo = req.params.part1 && req.params.part2 
+      ? `${req.params.part1}/${req.params.part2}`
+      : req.params.khasraNo;
     const parcel = cadastralGisService.lookupParcel(decodeURIComponent(khasraNo));
 
     if (!parcel) {
