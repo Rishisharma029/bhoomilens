@@ -30,8 +30,10 @@ import {
   Award,
   PenTool,
   Stamp,
-  Table
+  Table,
+  Compass
 } from 'lucide-react';
+import { CadastralGISEngine } from '../../components/gis/CadastralGISEngine';
 
 interface ExtractedFieldState {
   key: string;
@@ -50,7 +52,7 @@ export const ReviewExtractedPage: React.FC = () => {
   const [submission, setSubmission] = useState<DocumentSubmission | null>(null);
   const [loading, setLoading] = useState(true);
   const [activeHighlightKey, setActiveHighlightKey] = useState<string>('ownerName');
-  const [activeTab, setActiveTab] = useState<'cadastre' | 'ownership' | 'location' | 'registration' | 'specialized'>('cadastre');
+  const [activeTab, setActiveTab] = useState<'cadastre' | 'gis' | 'ownership' | 'location' | 'registration' | 'specialized'>('cadastre');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [saveDraftToast, setSaveDraftToast] = useState(false);
   const [submitSuccessModal, setSubmitSuccessModal] = useState(false);
@@ -695,8 +697,8 @@ export const ReviewExtractedPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Category Switcher Tabs (Cadastre, Parties, Location, Registry, Specialized) */}
-            <div className="grid grid-cols-5 gap-1 p-1 bg-slate-100 rounded-xl text-xs font-bold">
+            {/* Category Switcher Tabs (Cadastre, GIS Map, Parties, Location, Registry, Specialized) */}
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-1 p-1 bg-slate-100 rounded-xl text-xs font-bold">
               <button
                 type="button"
                 onClick={() => setActiveTab('cadastre')}
@@ -705,7 +707,18 @@ export const ReviewExtractedPage: React.FC = () => {
                 }`}
               >
                 <Layers size={13} />
-                <span className="hidden sm:inline">Cadastre</span>
+                <span>Cadastre</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setActiveTab('gis')}
+                className={`py-2 rounded-lg transition flex items-center justify-center gap-1 ${
+                  activeTab === 'gis' ? 'bg-emerald-900 text-white shadow-xs' : 'text-emerald-800 hover:text-emerald-950'
+                }`}
+              >
+                <Compass size={13} />
+                <span>GIS Map</span>
               </button>
 
               <button
@@ -716,7 +729,7 @@ export const ReviewExtractedPage: React.FC = () => {
                 }`}
               >
                 <UserCheck size={13} />
-                <span className="hidden sm:inline">Parties</span>
+                <span>Parties</span>
               </button>
 
               <button
@@ -727,7 +740,7 @@ export const ReviewExtractedPage: React.FC = () => {
                 }`}
               >
                 <MapPin size={13} />
-                <span className="hidden sm:inline">Location</span>
+                <span>Location</span>
               </button>
 
               <button
@@ -738,7 +751,7 @@ export const ReviewExtractedPage: React.FC = () => {
                 }`}
               >
                 <FileText size={13} />
-                <span className="hidden sm:inline">Registry</span>
+                <span>Registry</span>
               </button>
 
               <button
@@ -749,14 +762,93 @@ export const ReviewExtractedPage: React.FC = () => {
                 }`}
               >
                 <Award size={13} />
-                <span className="hidden sm:inline">Specialized</span>
+                <span>Specialized</span>
               </button>
             </div>
 
             {/* Field Inputs for Active Tab */}
-            {activeTab !== 'specialized' ? (
+            {activeTab === 'gis' ? (
+              <div className="space-y-4">
+                <div className="p-3 bg-slate-900 text-white rounded-xl border border-slate-700 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Compass size={16} className="text-emerald-400" />
+                    <div>
+                      <h4 className="text-xs font-bold text-white">Cadastral GIS Engine • BhuNaksha Multi-Polygon Cross-Check</h4>
+                      <p className="text-[10px] text-slate-400">Comparing Deed Parcel Claim (2.35 Ac) against Master Cadastre (2.42 Ac)</p>
+                    </div>
+                  </div>
+                  <span className="text-[10px] font-mono bg-emerald-950 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded font-bold">
+                    Khasra {fields.surveyNo?.value || '124/7'}
+                  </span>
+                </div>
+
+                <div className="rounded-xl overflow-hidden border border-slate-200">
+                  <CadastralGISEngine 
+                    khasraNo={fields.surveyNo?.value || '124/7'}
+                    deedArea={parseFloat(fields.area?.value) || 2.35}
+                    height="580px"
+                  />
+                </div>
+              </div>
+            ) : activeTab === 'specialized' ? (
+              /* SPECIALIZED EXTRACTION TAB: Domain-specific extracted parameters */
+              <div className="space-y-4">
+                <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
+                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-900">
+                    <Sparkles size={14} className="text-emerald-700" />
+                    <span>Specialized Pipeline Extracted Parameters ({classification.label})</span>
+                  </div>
+                  <p className="text-[11px] text-emerald-800 mt-0.5">
+                    Extracted automatically by the domain parser routed for this document type:
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {Object.entries(specializedData).map(([key, val]) => {
+                    const formattedKey = key
+                      .replace(/([A-Z])/g, ' $1')
+                      .replace(/^./, str => str.toUpperCase());
+
+                    return (
+                      <div key={key} className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                        <span className="text-[10px] font-bold uppercase text-slate-500 tracking-wider">
+                          {formattedKey}
+                        </span>
+                        <p className="text-xs font-extrabold text-slate-900 font-mono">
+                          {typeof val === 'boolean' ? (val ? 'Yes / Verified ✓' : 'No / None') : String(val)}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
               <div className="space-y-3.5">
-                {categories[activeTab].map((key) => {
+                {/* Cadastre GIS Quick Cross-Check Banner */}
+                {activeTab === 'cadastre' && (
+                  <div 
+                    onClick={() => setActiveTab('gis')}
+                    className="p-3 bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-900 text-white rounded-xl border border-emerald-500/30 flex items-center justify-between cursor-pointer hover:border-emerald-400 transition shadow-xs group"
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-300">
+                        <Compass size={18} />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold flex items-center gap-2">
+                          <span>BhuNaksha GIS Cadastral Cross-Check</span>
+                          <span className="text-[10px] font-mono bg-emerald-900 text-emerald-200 px-1.5 py-0.5 rounded border border-emerald-500/30">96.7% Overlap</span>
+                        </div>
+                        <p className="text-[11px] text-slate-300">
+                          Deed ({fields.area?.value || '2.35'} Ac) vs GIS (2.42 Ac) [+2.98%] • Inspect satellite polygon overlay →
+                        </p>
+                      </div>
+                    </div>
+                    <ArrowRight size={16} className="text-emerald-400 group-hover:translate-x-1 transition" />
+                  </div>
+                )}
+
+                {categories[activeTab]?.map((key) => {
                   const f = fields[key];
                   if (!f) return null;
                   const isSelected = activeHighlightKey === key;
@@ -826,38 +918,6 @@ export const ReviewExtractedPage: React.FC = () => {
                     </div>
                   );
                 })}
-              </div>
-            ) : (
-              /* SPECIALIZED EXTRACTION TAB: Domain-specific extracted parameters */
-              <div className="space-y-4">
-                <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200">
-                  <div className="flex items-center gap-2 text-xs font-bold text-emerald-900">
-                    <Sparkles size={14} className="text-emerald-700" />
-                    <span>Specialized Pipeline Extracted Parameters ({classification.label})</span>
-                  </div>
-                  <p className="text-[11px] text-emerald-800 mt-0.5">
-                    Extracted automatically by the domain parser routed for this document type:
-                  </p>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {Object.entries(specializedData).map(([key, val]) => {
-                    const formattedKey = key
-                      .replace(/([A-Z])/g, ' $1')
-                      .replace(/^./, str => str.toUpperCase());
-
-                    return (
-                      <div key={key} className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
-                        <span className="text-[10px] font-bold uppercase text-slate-500 tracking-wider">
-                          {formattedKey}
-                        </span>
-                        <p className="text-xs font-extrabold text-slate-900 font-mono">
-                          {typeof val === 'boolean' ? (val ? 'Yes / Verified ✓' : 'No / None') : String(val)}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
               </div>
             )}
 

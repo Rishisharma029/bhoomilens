@@ -5,6 +5,7 @@ import authRoutes from './routes/authRoutes';
 import landRecordRoutes from './routes/landRecordRoutes';
 import documentRoutes from './routes/documentRoutes';
 import adminRoutes from './routes/adminRoutes';
+import gisRoutes from './routes/gisRoutes';
 import { storageService } from './services/storageService';
 import { db } from './db/client';
 
@@ -46,6 +47,9 @@ app.use('/api/documents', documentRoutes);
 
 // Admin Verification & Adjudication Routes
 app.use('/api/admin', adminRoutes);
+
+// Cadastral GIS Engine Routes
+app.use('/api/gis', gisRoutes);
 
 // General Records Route (backward compatibility)
 app.get('/api/records', (_req: Request, res: Response) => {

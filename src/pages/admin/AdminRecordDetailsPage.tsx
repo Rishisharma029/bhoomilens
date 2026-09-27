@@ -17,6 +17,7 @@ import {
   Clock,
   ArrowRight
 } from 'lucide-react';
+import { CadastralGISEngine } from '../../components/gis/CadastralGISEngine';
 
 export const AdminRecordDetailsPage: React.FC = () => {
   const { id = 'rec_uk_003' } = useParams<{ id: string }>();
@@ -104,40 +105,13 @@ export const AdminRecordDetailsPage: React.FC = () => {
               </span>
             </div>
 
-            {/* Visual Cadastral Polygon Simulator */}
-            <div className="relative h-64 bg-slate-900 rounded-xl overflow-hidden border border-slate-700 flex items-center justify-center p-6">
-              {/* Grid lines */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#334155_1px,transparent_1px),linear-gradient(to_bottom,#334155_1px,transparent_1px)] bg-[size:24px_24px] opacity-30" />
-
-              {/* Surrounding Plots */}
-              <div className="absolute top-4 left-6 text-[10px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                Khasra 304/3 (Colony Path)
-              </div>
-              <div className="absolute bottom-4 right-6 text-[10px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
-                Khasra 305 (Greenbelt)
-              </div>
-
-              {/* Center Target Polygon */}
-              <div className="relative z-10 w-72 h-44 border-2 border-emerald-400 bg-emerald-500/20 rounded-lg p-4 flex flex-col justify-between shadow-2xl backdrop-blur-xs">
-                <div className="flex justify-between items-start text-xs font-bold text-emerald-300">
-                  <span>Khasra {record.khasraNo}</span>
-                  <span className="text-[10px] font-mono bg-emerald-950 px-1.5 py-0.5 rounded border border-emerald-500/40">
-                    GIS: {record.area} Ha
-                  </span>
-                </div>
-
-                <div className="text-center text-[11px] text-emerald-200 font-mono">
-                  {record.ownerName}
-                  <br />
-                  <span className="text-[9px] text-emerald-400">Lat: 30.3165° N, Long: 78.0322° E</span>
-                </div>
-
-                {record.status === 'FLAGGED_DISCREPANCY' && (
-                  <div className="text-[10px] font-bold text-rose-300 bg-rose-950/80 p-1 rounded border border-rose-500/50 text-center animate-pulse">
-                    ⚠ Boundary Variance: Deed claims +0.025 Ha on East verge
-                  </div>
-                )}
-              </div>
+            {/* Interactive Cadastral GIS Engine (BhuNaksha Vector Cadastre & Satellite Overlap) */}
+            <div className="rounded-xl overflow-hidden border border-slate-200">
+              <CadastralGISEngine 
+                khasraNo={record.khasraNo} 
+                deedArea={typeof record.area === 'number' ? record.area : 2.35} 
+                height="500px" 
+              />
             </div>
           </div>
 

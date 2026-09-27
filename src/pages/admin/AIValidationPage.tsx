@@ -4,6 +4,7 @@ import { useRecords } from '../../context/RecordsContext';
 import { adminService } from '../../services/adminService';
 import { OCRViewer } from '../../components/common/OCRViewer';
 import { VerificationActionModal } from '../../components/admin/VerificationActionModal';
+import { CadastralGISEngine } from '../../components/gis/CadastralGISEngine';
 import { 
   ChevronLeft, 
   CheckCircle2, 
@@ -24,7 +25,8 @@ import {
   User,
   MapPin,
   Calendar,
-  ShieldCheck
+  ShieldCheck,
+  Maximize2
 } from 'lucide-react';
 
 export const AIValidationPage: React.FC = () => {
@@ -32,6 +34,7 @@ export const AIValidationPage: React.FC = () => {
   const navigate = useNavigate();
   const { records, refreshData } = useRecords();
 
+  const [activeView, setActiveView] = useState<'THREE_PANEL' | 'CADASTRAL_GIS'>('THREE_PANEL');
   const [activeHighlightKey, setActiveHighlightKey] = useState<string>('areaClaimed');
   const [actionModalOpen, setActionModalOpen] = useState(false);
   const [selectedDecision, setSelectedDecision] = useState<'APPROVE' | 'REQUEST_CORRECTION' | 'REJECT'>('APPROVE');
@@ -181,19 +184,53 @@ export const AIValidationPage: React.FC = () => {
         </div>
       )}
 
-      {/* THREE-PANEL LAYOUT (Exact specification requested):
-          ┌─────────────────────┬──────────────────────┬─────────────────────┐
-          │ ORIGINAL DOCUMENT   │ EXTRACTED RECORD     │ VALIDATION          │
-          │                     │                      │                     │
-          │ PDF/Image preview   │ Owner                │ ✓ Owner Match       │
-          │                     │ Survey No.           │ ✓ Survey Match      │
-          │                     │ Area                 │ ⚠ Area Mismatch     │
-          │                     │ Village              │ ✓ Location Match    │
-          │                     │ Registration Date    │ ✓ Date Valid        │
-          │                     │                      │ ⚠ Review Required   │
-          └─────────────────────┴──────────────────────┴─────────────────────┘
-      */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+      {/* Evidence View Mode Switcher */}
+      <div className="flex items-center justify-between bg-slate-100 p-1.5 rounded-2xl border border-slate-200">
+        <div className="flex items-center gap-1">
+          <button
+            type="button"
+            onClick={() => setActiveView('THREE_PANEL')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 ${
+              activeView === 'THREE_PANEL'
+                ? 'bg-white text-purple-900 shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            <FileText size={14} />
+            <span>Three-Panel Deed &amp; Validation Dossier</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setActiveView('CADASTRAL_GIS')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-2 ${
+              activeView === 'CADASTRAL_GIS'
+                ? 'bg-slate-900 text-white shadow-xs'
+                : 'text-slate-600 hover:text-slate-900'
+            }`}
+          >
+            <Compass size={14} className="text-emerald-400" />
+            <span>🛰️ Interactive Cadastral GIS Engine (BhuNaksha)</span>
+            <span className="text-[10px] font-mono bg-emerald-500/20 text-emerald-300 px-1.5 py-0.2 rounded font-extrabold">
+              LIVE
+            </span>
+          </button>
+        </div>
+
+        <div className="text-[11px] font-mono text-slate-500 hidden sm:block pr-2">
+          Khasra {extractedData.surveyNo} • 96.7% Polygon Overlap
+        </div>
+      </div>
+
+      {activeView === 'CADASTRAL_GIS' ? (
+        /* INTERACTIVE CADASTRAL GIS ENGINE VIEW */
+        <CadastralGISEngine 
+          khasraNo={extractedData.surveyNo} 
+          deedArea={2.35} 
+        />
+      ) : (
+        /* THREE-PANEL LAYOUT (Exact specification requested) */
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
         
         {/* PANEL 1: ORIGINAL DOCUMENT (PDF/Image preview) */}
         <div className="lg:col-span-5 bg-white rounded-3xl border border-slate-200 p-5 shadow-xs flex flex-col justify-between h-[680px]">
@@ -403,10 +440,19 @@ export const AIValidationPage: React.FC = () => {
               <AlertTriangle size={13} className="text-amber-600" />
               <span>Variance Exceeds 2.0% Tolerance</span>
             </div>
+            <button
+              type="button"
+              onClick={() => setActiveView('CADASTRAL_GIS')}
+              className="mt-2 text-xs font-extrabold text-purple-700 hover:text-purple-900 flex items-center justify-center gap-1.5 mx-auto bg-purple-50 hover:bg-purple-100 px-3 py-1.5 rounded-lg border border-purple-200 transition"
+            >
+              <Compass size={13} className="text-purple-600" />
+              <span>Launch Interactive GIS Engine</span>
+            </button>
           </div>
         </div>
 
       </div>
+      )}
 
       {/* AI VALIDATION EXPLANATION (Below the 3 panels) */}
       <div className="bg-amber-50/80 rounded-2xl border-2 border-amber-300 p-5 shadow-xs space-y-2 text-slate-900">
